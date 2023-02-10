@@ -3,6 +3,6 @@
 ## 第1章
 あいうえお
 
-[DLテスト] (https://tksmiki.github.io/test_R/test01.R)
+[test01.R](https://tksmiki.github.io/test_R/test01.R)
 
 ## 第2章
