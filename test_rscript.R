@@ -4,5 +4,5 @@
 1+1
 exp(-2.0)
 
-#load library
+#load package into library
 library(vegan)
