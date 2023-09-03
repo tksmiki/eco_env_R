@@ -4,7 +4,7 @@
 テスト
 
 [test01.R](https://tksmiki.github.io/test_R/test01.R) <br>
-[test](https://tksmiki.github.i.o/test_R/chapter01.md)
+[test](https://github.com/tksmiki/test_R/blob/main/chapter01.md)
 
 ## 第2章
 Rスクリプトをダウンロードして、RStudioで開いてください：[test_rscript.R](https://tksmiki.github.io/test_R/test_rscript.R) <br>
