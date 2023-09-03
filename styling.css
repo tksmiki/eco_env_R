@@ -8,9 +8,6 @@ nav {
 ul {
   display: flex;
 }
-li {
-  list-style: none;
-}
 a {
   display: block;
   text-decoration: none;
