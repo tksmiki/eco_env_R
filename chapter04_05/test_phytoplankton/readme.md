@@ -7,12 +7,12 @@
 
 #### 各観測のデータファイルのダウンロード
 [20180316_1_ryuko.csv](./20180316_1_ryuko.csv)
-[20180316_1_ryuko.csv](./20180316_1_ryuko.csv)
+[20180316_2_ryuko.csv](./20180316_2_ryuko.csv)
 [20181004_1_ryuko.csv](./20181004_1_ryuko.csv)
-[20181004_2_ryuko_e1.csv](./20181004_2_ryuko_e1.csv)
+わざとエラーを含めたファイル：[20181004_1_ryuko_e1.csv](./20181004_1_ryuko_e1.csv)
 [20181004_2_ryuko.csv](./20181004_2_ryuko.csv)
 [20181004_3_ryuko.csv](./20181004_3_ryuko.csv)
-[20181004_3_ryuko_e1.csv](./20181004_3_ryuko_e1.csv)
+わざとエラーを含めたファイル：[20181004_3_ryuko_e1.csv](./20181004_3_ryuko_e1.csv)
 [20181025_1_ryuko.csv](./20181025_1_ryuko.csv)
 [20181025_2_ryuko.csv](./20181025_2_ryuko.csv)
 [20190425_1_ryuko.csv](./20190425_1_ryuko.csv)
