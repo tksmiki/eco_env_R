@@ -39,5 +39,7 @@
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
 
+## 4.4 メタデータを活用した大量のデータの自動読み込み
+4.2のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。
 
 
