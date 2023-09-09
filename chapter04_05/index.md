@@ -30,6 +30,8 @@
 新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。
 <a href="./test_ecoplate/" target="_blank" rel="noopener noreferrer"><b>test_ecoplate</b></a>
 
-# 4.1.  
+## 4.2. エクセルを使ってメタデータをまとめる
+以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！
+[phyto_test.R](./test_phytoplankton/phyto_test.R)
 
 
