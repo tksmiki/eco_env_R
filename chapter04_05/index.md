@@ -34,4 +34,7 @@
 以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！
 [phyto_test.R](./test_phytoplankton/phyto_test.R)
 
+## 4.3 プログラミングの基礎(if, loop, 関数)
+
+
 
