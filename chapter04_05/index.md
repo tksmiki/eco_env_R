@@ -37,6 +37,8 @@
 ## 4.3 プログラミングの基礎(if, loop, 関数)
 以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。
 [chapter04_4-3.R](./chapter04_4-3.R)
+このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
+<a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
 
 
 
