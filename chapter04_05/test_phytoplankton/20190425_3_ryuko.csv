@@ -1,0 +1,23 @@
+type,species,cells
+diatom,Asterionella formosa,48
+diatom,Aulacoseira ambigua,5
+diatom,Aulacoseira granulata,9
+diatom,Aulacoseira sp.,3
+green,Closterium aciculare,7
+motile,Dinobryon cylindricum,2
+diatom,Fragilaria crotonensis,6
+diatom,Melosira varians,7
+green,Micrasterias hardyi,16
+cyano,Microcystis aeruginosa,22
+cyano,Microcystis sp.,1
+cyano,Microcystis viridis,1
+cyano,Microcystis wesenbergii,22
+diatom,Navicula sp.,1
+diatom,Nitzschia sp.,1
+cyano,Phormidium tenue,2
+green,Sphaerocystis schroeteri,1
+green,Staurastrum sebaldi,2
+green,Staurastrum dorsidentiferum,6
+green,Staurastrum sp.,1
+diatom,Surirella sp.,1
+diatom,Synedra sp.,8
