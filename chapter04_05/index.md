@@ -25,7 +25,7 @@
 ### [2.1] 植物プランクトンの種組成に関するメタデータ・観測データのダウンロード
 新しいタブで以下のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。
 <a href="./test_phytoplankton/" target="_blank" rel="noopener noreferrer"><b>test_phytoplankton</b></a>
-### [2.2] 微生物の＊＊＊に関するメタデータ・観測データのダウンロード
+### [2.2] 細菌群集の炭素代謝に関するメタデータ・観測データのダウンロード
 新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。
 <a href="./test_ecoplate/" target="_blank" rel="noopener noreferrer"><b>test_ecoplate</b></a>
 
@@ -40,6 +40,13 @@
 <a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
 
 ## 4.4 メタデータを活用した大量のデータの自動読み込み
+### 4.4.1 自動読み込み例1: 植物プランクトンの種構成データ
 4.2のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。
+このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
+<a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
+
+### 4.4.2 自動読み込み例2: 細菌群集の炭素代謝データ（エコプレート）
+以下のサンプルスクリプトを<b>test_ecoplate</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下や<b>test_phytoplankton</n>の下に保存してはいけません！
+[ecoplate_test.R](./test_ecoplate/ecoplate_test.R)
 
 
