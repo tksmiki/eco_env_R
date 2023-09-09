@@ -35,6 +35,8 @@
 [phyto_test.R](./test_phytoplankton/phyto_test.R)
 
 ## 4.3 プログラミングの基礎(if, loop, 関数)
+以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。
+[chapter04_4-3.R](./chapter04_4-3.R)
 
 
 
