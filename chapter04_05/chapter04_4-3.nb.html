@@ -1756,27 +1756,249 @@ display: none;
 <h2>4.3 Rプログラミングの基礎(if, loop, 関数)</h2>
 <div id="条件分岐ifelseelse-if" class="section level3">
 <h3>4.3.1 条件分岐(if/else/else if)</h3>
+<div id="if文" class="section level4">
+<h4>if文</h4>
+<p>if文の例</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjI0ZvciBjaGFwdGVyIDA0IHNlY3Rpb24gNC4zXG4jIyMjRm9yIDQuMy4xIChpZi9lbHNlL2Vsc2UgaWYpXG5cbiNpZiBzdGF0ZW1lbnRcbmEgPC0gM1xuaWYoYSA+IDMpIHtcbiAgY2F0KFwiYSBpcyBncmVhdGVyIHRoYW4gMy5cIiwgXCJcXG5cIikgI3RoaXMgaWlzIGV4ZWN1dGVkIHdoZW4gdGhlIGNvbmRpdGlvbiBpcyB0cnVlXG59IGVsc2Uge1xuICBjYXQoXCJhIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAzLlwiLCBcIlxcblwiKSAjVGhpcyBpcyBleGVjdXRlZCB3aGVuIHRoZSBjb25kaXRpb24gaXMgbm90IHRydWVcbn1cbmBgYCJ9 -->
-<pre class="r"><code>####For chapter 04 section 4.3
-####For 4.3.1 (if/else/else if)
-
-#if statement
-a &lt;- 3
-if(a &gt; 3) {
-  cat(&quot;a is greater than 3.&quot;, &quot;\n&quot;) #this iis executed when the condition is true
-} else {
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2lmIHN0YXRlbWVudFxuYSA8LSAzICNh44Go44GE44GG44Kq44OW44K444Kn44Kv44OI44GrM+OCkuS7o+WFpVxuaWYoYSA+IDMpIHvjgIAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgafmnaHku7bliIblspDjgZXjgZvjgotcbiAgI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM55yf44Gu44Go44GN44Gr5qyh44Gu44Kz44O844OJ44GM5a6f6KGM44GV44KM44KLXG4gIGNhdChcImEgaXMgZ3JlYXRlciB0aGFuIDMuXCIsIFwiXFxuXCIpICN0aGlzIGlzIGV4ZWN1dGVkIHdoZW4gdGhlIGNvbmRpdGlvbiBpcyB0cnVlXG59IGVsc2Uge+OAgCPjgIxhID4gM+OAjeOBqOOBhOOBhuadoeS7tuW8j+OBjOWBveOBruOBqOOBjeOBq+asoeOBruOCs+ODvOODieOBjOWun+ihjOOBleOCjOOCi1xuICBjYXQoXCJhIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAzLlwiLCBcIlxcblwiKSAjVGhpcyBpcyBleGVjdXRlZCB3aGVuIHRoZSBjb25kaXRpb24gaXMgbm90IHRydWVcbn1cbmBgYCJ9 -->
+<pre class="r"><code>#if statement
+a &lt;- 3 #aというオブジェクトに3を代入
+if(a &gt; 3) {　#「a &gt; 3」という条件式で条件分岐させる
+  #「a &gt; 3」という条件式が真のときに次のコードが実行される
+  cat(&quot;a is greater than 3.&quot;, &quot;\n&quot;) #this is executed when the condition is true
+} else {　#「a &gt; 3」という条件式が偽のときに次のコードが実行される
   cat(&quot;a is less than or equal to 3.&quot;, &quot;\n&quot;) #This is executed when the condition is not true
 }</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYSBpcyBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gMy4gXG4ifQ== -->
+<pre><code>a is less than or equal to 3. </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>[a &gt;
+3]という条件式の真(TRUE)／偽(FALSE)を判定する→aの値は3なので、当然偽(FALSE)である</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA+IDNcbmBgYCJ9 -->
+<pre class="r"><code>a &gt; 3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>他の関係演算子の挙動を確認してみよう</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8IDMgICAgI2Hjga8z44KI44KK5bCP44GV44GEKD0z5pyq5rqAKeOBi++8n1xuYGBgIn0= -->
+<pre class="r"><code>a &lt; 3    #aは3より小さい(=3未満)か？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA+PSAz44CAI2Hjga8z5Lul5LiK44GL77yfXG5gYGAifQ== -->
+<pre class="r"><code>a &gt;= 3　#aは3以上か？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8PSAz44CAI2Hjga8z5Lul5LiL44GL77yfXG5gYGAifQ== -->
+<pre class="r"><code>a &lt;= 3　#aは3以下か？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9PSAz44CAI2Hjga8z44Go562J44GX44GE44GL77yfXG5gYGAifQ== -->
+<pre class="r"><code>a == 3　#aは3と等しいか？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSAhPSAy44CAI2Hjga8y44Go562J44GX44GP44Gq44GE44GL77yfXG5gYGAifQ== -->
+<pre class="r"><code>a != 2　#aは2と等しくないか？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9PSBiICNh44GvYuOBqOetieOBl+OBhOOBi++8n1xuYGBgIn0= -->
+<pre class="r"><code>a == b #aはbと等しいか？</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>if文の失敗例</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2lmIHN0YXRlbWVudFxuYSA8LSAzICNh44Go44GE44GG44Kq44OW44K444Kn44Kv44OI44GrM+OCkuS7o+WFpVxuaWYoYSA+IDMpIHvjgIAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgafmnaHku7bliIblspDjgZXjgZvjgotcbiAgI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM55yf44Gu44Go44GN44Gr5qyh44Gu44Kz44O844OJ44GM5a6f6KGM44GV44KM44KLXG4gIGNhdChcImEgaXMgZ3JlYXRlciB0aGFuIDMuXCIsIFwiXFxuXCIpICN0aGlzIGlzIGV4ZWN1dGVkIHdoZW4gdGhlIGNvbmRpdGlvbiBpcyB0cnVlXG59IFxuZWxzZSB744CAI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM5YG944Gu44Go44GN44Gr5qyh44Gu44Kz44O844OJ44GM5a6f6KGM44GV44KM44KLXG5gYGAifQ== -->
+<pre class="r"><code>#if statement
+a &lt;- 3 #aというオブジェクトに3を代入
+if(a &gt; 3) {　#「a &gt; 3」という条件式で条件分岐させる
+  #「a &gt; 3」という条件式が真のときに次のコードが実行される
+  cat(&quot;a is greater than 3.&quot;, &quot;\n&quot;) #this is executed when the condition is true
+} 
+else {　#「a &gt; 3」という条件式が偽のときに次のコードが実行される</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IHVuZXhwZWN0ZWQgJ2Vsc2UnIGluIFwiZWxzZVwiXG4ifQ== -->
+<pre><code>Error: unexpected &#39;else&#39; in &quot;else&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="else-if文" class="section level4">
+<h4>else if文</h4>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSAyXG5pZihhID4gMykgeyAgI+adoeS7tuW8j+OBruODgeOCp+ODg+OCr1xuICBjYXQoXCJhIGlzIGdyZWF0ZXIgdGhhbiAzLlwiLCBcIlxcblwiKSAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgYznnJ/jga7jgajjgY3jgavjgZPjga7jgrPjg7zjg4njgYzlrp/ooYzjgZXjgozjgotcbn0gZWxzZSBpZihhID4gMSkge1xuICBjYXQoXCJhIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byAzIGJ1dCBncmVhdGVyIHRoYW4gMS5cIiwgXCJcXG5cIikgI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM5rqA44Gf44GV44KM44Ga44CB44GL44Gk44CMYSA+IDHjgI3jgYzmuoDjgZ/jgZXjgozjgovjgajjgY3jgavjgZPjga7jgrPjg7zjg4njgYzlrp/ooYzjgZXjgozjgotcbn0gZWxzZXtcbiAgY2F0KFwiYSBpcyBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gMS5cIiwgXCJcXG5cIikgI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM5rqA44Gf44GV44KM44Ga44CB44GL44Gk44CMYSA+IDHjgI3jgoLmuoDjgZ/jgZXjgozjgarjgYTjgajjgY3jgavjgZPjga7jgrPjg7zjg4njgYzlrp/ooYzjgZXjgozjgotcbn1cbmBgYCJ9 -->
+<pre class="r"><code>a &lt;- 2
+if(a &gt; 3) {  #条件式のチェック
+  cat(&quot;a is greater than 3.&quot;, &quot;\n&quot;) #「a &gt; 3」という条件式が真のときにこのコードが実行される
+} else if(a &gt; 1) {
+  cat(&quot;a is less than or equal to 3 but greater than 1.&quot;, &quot;\n&quot;) #「a &gt; 3」という条件式が満たされず、かつ「a &gt; 1」が満たされるときにこのコードが実行される
+} else{
+  cat(&quot;a is less than or equal to 1.&quot;, &quot;\n&quot;) #「a &gt; 3」という条件式が満たされず、かつ「a &gt; 1」も満たされないときにこのコードが実行される
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYSBpcyBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gMyBidXQgZ3JlYXRlciB0aGFuIDEuIFxuIn0= -->
+<pre><code>a is less than or equal to 3 but greater than 1. </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="繰り返し処理ループfor-loop" class="section level3">
+<h3>4.3.2 繰り返し処理=ループ(for loop)</h3>
+<p>ループの例</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubiA8LSAxMCAj44Or44O844OX44Gu5Zue5pWw44KS5oyH5a6a44GZ44KL44Kq44OW44K444Kn44Kv44OIbuOCkueUqOaEj+OBl+OBpuOAgTEw44KS5Luj5YWlXG5zdW0gPC0gMOOAgCNzdW3jgajjgYTjgYbjgqrjg5bjgrjjgqfjgq/jg4jjga7liJ3mnJ/lgKTjgpIw44Gr6Kit5a6aXG5cbiNmb3IgbG9vcCDjgIzjg5bjg63jg4Pjgq/jgI1cbmZvcihqIGluIDE6bikgeyAjKCnjga7kuK3jgafjg6vjg7zjg5fjga7plovlp4vngrkoaiA9IDEp44Go57WC5LqG54K5KGogPSBuKeOCkuaMh+WumlxuICBzdW0gPC0gc3VtICsgauOAgCNzdW3jga7lgKTjgatq44KS6Laz44GX44Gf44KC44Gu44KS5LiK5pu444GN44GZ44KLXG59XG5wcmludChzdW0p44CAI+ODq+ODvOODl+e1guS6huW+jOOBrnN1beOBruWApOOCkuihqOekuuOBmeOCi1xuYGBgIn0= -->
+<pre class="r"><code>n &lt;- 10 #ループの回数を指定するオブジェクトnを用意して、10を代入
+sum &lt;- 0　#sumというオブジェクトの初期値を0に設定
+
+#for loop 「ブロック」
+for(j in 1:n) { #()の中でループの開始点(j = 1)と終了点(j = n)を指定
+  sum &lt;- sum + j　#sumの値にjを足したものを上書きする
+}
+print(sum)　#ループ終了後のsumの値を表示する</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU1XG4ifQ== -->
+<pre><code>[1] 55</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>(ループを使わない場合)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtIDwtIDEgKyAyICsgMyArIDQgKyA1ICsgNiArIDcgKyA4ICsgOSArIDEwXG5wcmludChzdW0pXG5gYGAifQ== -->
+<pre class="r"><code>sum &lt;- 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
+print(sum)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU1XG4ifQ== -->
+<pre><code>[1] 55</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="関数" class="section level3">
+<h3>4.3.3 関数</h3>
+<div id="関数定義の形式" class="section level4">
+<h4>関数定義の形式</h4>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxu6Zai5pWw5ZCNIDwtIGZ1bmN0aW9uKOODkeODqeODoeODvOOCv+WQjSA9IOODh+ODleOCqeODq+ODiOOBruW8leaVsOWApCkge1xuICDplqLmlbDjga7kuK3ouqtcbiAgcmV0dXJuKOaIu+OCiuWApClcbn1cbmBgYCJ9 -->
+<pre class="r"><code>関数名 &lt;- function(パラメータ名 = デフォルトの引数値) {
+  関数の中身
+  return(戻り値)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="関数の使用例" class="section level4">
+<h4>関数の使用例</h4>
+<p>関数定義の例1</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9zdW0gPC0gZnVuY3Rpb24obiA9IDEwKSB7XG4gIHN1bSA8LSBuKihuICsgMSkvMlxuICByZXR1cm4oc3VtKVxufVxuYGBgIn0= -->
+<pre class="r"><code>f_sum &lt;- function(n = 10) {
+  sum &lt;- n*(n + 1)/2
+  return(sum)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>関数の呼び出し</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9zdW0obiA9IDUpXG5gYGAifQ== -->
+<pre class="r"><code>f_sum(n = 5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE1XG4ifQ== -->
+<pre><code>[1] 15</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9zdW0oKVxuYGBgIn0= -->
+<pre class="r"><code>f_sum()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU1XG4ifQ== -->
+<pre><code>[1] 55</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>関数定義と呼び出しの例2</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI+S7u+aEj+OBrm7jgYvjgolt44G+44Gn6Laz44GX566X44KS44GZ44KL6Zai5pWwXG5mX3N1bTIgPC0gZnVuY3Rpb24obiA9IDMsIG0pIHtcbiAgc3VtIDwtIDAgI+WIneacn+WApOOBruioreWumlxuICAjZm9yIGxvb3DjgpLkvb/jgaPjgabotrPjgZfnrpfjga7nubDjgorov5TjgZfjgpLlrp/nj75cbiAgZm9yKGogaW4gbjptKSB7ICNmb3IgbG9vcOOBrumWi+Wni+eCueOBr24sIOe1guS6hueCueOBr21cbiAgICBzdW0gPC0gc3VtICsgalxuICB9XG4gIHJldHVybihzdW0pXG59XG4j6Zai5pWw5ZG844Gz5Ye644GX77yG5Luj5YWlXG50ZXN0IDwtIGZfc3VtMihuID0gMTAwLCBtID0gMTAwMClcbnRlc3RcbmBgYCJ9 -->
+<pre class="r"><code>#任意のnからmまで足し算をする関数
+f_sum2 &lt;- function(n = 3, m) {
+  sum &lt;- 0 #初期値の設定
+  #for loopを使って足し算の繰り返しを実現
+  for(j in n:m) { #for loopの開始点はn, 終了点はm
+    sum &lt;- sum + j
+  }
+  return(sum)
+}
+#関数呼び出し＆代入
+test &lt;- f_sum2(n = 100, m = 1000)
+test</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQ5NTU1MFxuIn0= -->
+<pre><code>[1] 495550</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="関数定義呼び出しにおける失敗ポイント" class="section level4">
+<h4>関数定義・呼び出しにおける失敗ポイント</h4>
+<p>定義されていないパラメータに引数を渡す場合</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9zdW0obiA9IDEwMCwgbSA9IDEwMDApXG5gYGAifQ== -->
+<pre class="r"><code>f_sum(n = 100, m = 1000)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZl9zdW0obiA9IDEwMCwgbSA9IDEwMDApIDogdW51c2VkIGFyZ3VtZW50IChtID0gMTAwMClcbiJ9 -->
+<pre><code>Error in f_sum(n = 100, m = 1000) : unused argument (m = 1000)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>デフォルトの引数が指定されていない関数なのに引数を指定しなかった場合</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9zdW0yKG4gPSAxMDApXG5gYGAifQ== -->
+<pre class="r"><code>f_sum2(n = 100)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZl9zdW0yKG4gPSAxMDApIDogYXJndW1lbnQgXCJtXCIgaXMgbWlzc2luZywgd2l0aCBubyBkZWZhdWx0XG4ifQ== -->
+<pre><code>Error in f_sum2(n = 100) : argument &quot;m&quot; is missing, with no default</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogImNoYXB0ZXIwNF80LTMuUuOBq+WvvuW/nOOBl+OBn1IgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KIyMgNC4zIFLjg5fjg63jgrDjg6njg5/jg7PjgrDjga7ln7rnpI4oaWYsIGxvb3AsIOmWouaVsCkNCiMjIyA0LjMuMSDmnaHku7bliIblspAoaWYvZWxzZS9lbHNlIGlmKQ0KDQpgYGB7cn0NCiMjIyNGb3IgY2hhcHRlciAwNCBzZWN0aW9uIDQuMw0KIyMjI0ZvciA0LjMuMSAoaWYvZWxzZS9lbHNlIGlmKQ0KDQojaWYgc3RhdGVtZW50DQphIDwtIDMNCmlmKGEgPiAzKSB7DQogIGNhdCgiYSBpcyBncmVhdGVyIHRoYW4gMy4iLCAiXG4iKSAjdGhpcyBpaXMgZXhlY3V0ZWQgd2hlbiB0aGUgY29uZGl0aW9uIGlzIHRydWUNCn0gZWxzZSB7DQogIGNhdCgiYSBpcyBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gMy4iLCAiXG4iKSAjVGhpcyBpcyBleGVjdXRlZCB3aGVuIHRoZSBjb25kaXRpb24gaXMgbm90IHRydWUNCn0NCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogImNoYXB0ZXIwNF80LTMuUuOBq+WvvuW/nOOBl+OBn1IgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KIyMgNC4zIFLjg5fjg63jgrDjg6njg5/jg7PjgrDjga7ln7rnpI4oaWYsIGxvb3AsIOmWouaVsCkNCiMjIyA0LjMuMSDmnaHku7bliIblspAoaWYvZWxzZS9lbHNlIGlmKQ0KDQojIyMjIGlm5paHDQppZuaWh+OBruS+iw0KYGBge3J9DQojaWYgc3RhdGVtZW50DQphIDwtIDMgI2HjgajjgYTjgYbjgqrjg5bjgrjjgqfjgq/jg4jjgasz44KS5Luj5YWlDQppZihhID4gMykge+OAgCPjgIxhID4gM+OAjeOBqOOBhOOBhuadoeS7tuW8j+OBp+adoeS7tuWIhuWykOOBleOBm+OCiw0KICAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgYznnJ/jga7jgajjgY3jgavmrKHjga7jgrPjg7zjg4njgYzlrp/ooYzjgZXjgozjgosNCiAgY2F0KCJhIGlzIGdyZWF0ZXIgdGhhbiAzLiIsICJcbiIpICN0aGlzIGlzIGV4ZWN1dGVkIHdoZW4gdGhlIGNvbmRpdGlvbiBpcyB0cnVlDQp9IGVsc2Uge+OAgCPjgIxhID4gM+OAjeOBqOOBhOOBhuadoeS7tuW8j+OBjOWBveOBruOBqOOBjeOBq+asoeOBruOCs+ODvOODieOBjOWun+ihjOOBleOCjOOCiw0KICBjYXQoImEgaXMgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIDMuIiwgIlxuIikgI1RoaXMgaXMgZXhlY3V0ZWQgd2hlbiB0aGUgY29uZGl0aW9uIGlzIG5vdCB0cnVlDQp9DQpgYGANClthID4gM13jgajjgYTjgYbmnaHku7blvI/jga7nnJ8oVFJVRSnvvI/lgb0oRkFMU0Up44KS5Yik5a6a44GZ44KL4oaSYeOBruWApOOBrzPjgarjga7jgafjgIHlvZPnhLblgb0oRkFMU0Up44Gn44GC44KLDQpgYGB7cn0NCmEgPiAzDQpgYGANCuS7luOBrumWouS/gua8lOeul+WtkOOBruaMmeWLleOCkueiuuiqjeOBl+OBpuOBv+OCiOOBhg0KYGBge3J9DQphIDwgMyAgICAjYeOBrzPjgojjgorlsI/jgZXjgYQoPTPmnKrmuoAp44GL77yfDQphID49IDPjgIAjYeOBrzPku6XkuIrjgYvvvJ8NCmEgPD0gM+OAgCNh44GvM+S7peS4i+OBi++8nw0KYSA9PSAz44CAI2Hjga8z44Go562J44GX44GE44GL77yfDQphICE9IDLjgIAjYeOBrzLjgajnrYnjgZfjgY/jgarjgYTjgYvvvJ8NCmEgPT0gYiAjYeOBr2LjgajnrYnjgZfjgYTjgYvvvJ8NCmBgYA0KaWbmlofjga7lpLHmlZfkvosNCmBgYHtyfQ0KI2lmIHN0YXRlbWVudA0KYSA8LSAzICNh44Go44GE44GG44Kq44OW44K444Kn44Kv44OI44GrM+OCkuS7o+WFpQ0KaWYoYSA+IDMpIHvjgIAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgafmnaHku7bliIblspDjgZXjgZvjgosNCiAgI+OAjGEgPiAz44CN44Go44GE44GG5p2h5Lu25byP44GM55yf44Gu44Go44GN44Gr5qyh44Gu44Kz44O844OJ44GM5a6f6KGM44GV44KM44KLDQogIGNhdCgiYSBpcyBncmVhdGVyIHRoYW4gMy4iLCAiXG4iKSAjdGhpcyBpcyBleGVjdXRlZCB3aGVuIHRoZSBjb25kaXRpb24gaXMgdHJ1ZQ0KfSANCmVsc2Uge+OAgCPjgIxhID4gM+OAjeOBqOOBhOOBhuadoeS7tuW8j+OBjOWBveOBruOBqOOBjeOBq+asoeOBruOCs+ODvOODieOBjOWun+ihjOOBleOCjOOCiw0KICBjYXQoImEgaXMgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIDMuIiwgIlxuIikgI1RoaXMgaXMgZXhlY3V0ZWQgd2hlbiB0aGUgY29uZGl0aW9uIGlzIG5vdCB0cnVlDQp9DQpgYGANCiMjIyMgZWxzZSBpZuaWhw0KYGBge3J9DQphIDwtIDINCmlmKGEgPiAzKSB7ICAj5p2h5Lu25byP44Gu44OB44Kn44OD44KvDQogIGNhdCgiYSBpcyBncmVhdGVyIHRoYW4gMy4iLCAiXG4iKSAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgYznnJ/jga7jgajjgY3jgavjgZPjga7jgrPjg7zjg4njgYzlrp/ooYzjgZXjgozjgosNCn0gZWxzZSBpZihhID4gMSkgew0KICBjYXQoImEgaXMgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIDMgYnV0IGdyZWF0ZXIgdGhhbiAxLiIsICJcbiIpICPjgIxhID4gM+OAjeOBqOOBhOOBhuadoeS7tuW8j+OBjOa6gOOBn+OBleOCjOOBmuOAgeOBi+OBpOOAjGEgPiAx44CN44GM5rqA44Gf44GV44KM44KL44Go44GN44Gr44GT44Gu44Kz44O844OJ44GM5a6f6KGM44GV44KM44KLDQp9IGVsc2V7DQogIGNhdCgiYSBpcyBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gMS4iLCAiXG4iKSAj44CMYSA+IDPjgI3jgajjgYTjgYbmnaHku7blvI/jgYzmuoDjgZ/jgZXjgozjgZrjgIHjgYvjgaTjgIxhID4gMeOAjeOCgua6gOOBn+OBleOCjOOBquOBhOOBqOOBjeOBq+OBk+OBruOCs+ODvOODieOBjOWun+ihjOOBleOCjOOCiw0KfQ0KYGBgDQojIyMgNC4zLjIg57mw44KK6L+U44GX5Yem55CGPeODq+ODvOODlyhmb3IgbG9vcCkNCuODq+ODvOODl+OBruS+iw0KYGBge3J9DQpuIDwtIDEwICPjg6vjg7zjg5fjga7lm57mlbDjgpLmjIflrprjgZnjgovjgqrjg5bjgrjjgqfjgq/jg4hu44KS55So5oSP44GX44Gm44CBMTDjgpLku6PlhaUNCnN1bSA8LSAw44CAI3N1beOBqOOBhOOBhuOCquODluOCuOOCp+OCr+ODiOOBruWIneacn+WApOOCkjDjgavoqK3lrpoNCg0KI2ZvciBsb29wIOOAjOODluODreODg+OCr+OAjQ0KZm9yKGogaW4gMTpuKSB7ICMoKeOBruS4reOBp+ODq+ODvOODl+OBrumWi+Wni+eCuShqID0gMSnjgajntYLkuobngrkoaiA9IG4p44KS5oyH5a6aDQogIHN1bSA8LSBzdW0gKyBq44CAI3N1beOBruWApOOBq2rjgpLotrPjgZfjgZ/jgoLjga7jgpLkuIrmm7jjgY3jgZnjgosNCn0NCnByaW50KHN1bSnjgIAj44Or44O844OX57WC5LqG5b6M44Guc3Vt44Gu5YCk44KS6KGo56S644GZ44KLDQoNCmBgYA0KKOODq+ODvOODl+OCkuS9v+OCj+OBquOBhOWgtOWQiCkNCmBgYHtyfQ0Kc3VtIDwtIDEgKyAyICsgMyArIDQgKyA1ICsgNiArIDcgKyA4ICsgOSArIDEwDQpwcmludChzdW0pDQpgYGANCiMjIyA0LjMuMyDplqLmlbANCiMjIyMg6Zai5pWw5a6a576p44Gu5b2i5byPDQpgYGB7cn0NCumWouaVsOWQjSA8LSBmdW5jdGlvbijjg5Hjg6njg6Hjg7zjgr/lkI0gPSDjg4fjg5Xjgqnjg6vjg4jjga7lvJXmlbDlgKQpIHsNCiAg6Zai5pWw44Gu5Lit6LqrDQogIHJldHVybijmiLvjgorlgKQpDQp9DQpgYGANCiMjIyMg6Zai5pWw44Gu5L2/55So5L6LDQrplqLmlbDlrprnvqnjga7kvosxDQpgYGB7cn0NCmZfc3VtIDwtIGZ1bmN0aW9uKG4gPSAxMCkgew0KICBzdW0gPC0gbioobiArIDEpLzINCiAgcmV0dXJuKHN1bSkNCn0NCmBgYA0K6Zai5pWw44Gu5ZG844Gz5Ye644GXDQpgYGB7cn0NCmZfc3VtKG4gPSA1KQ0KZl9zdW0oKQ0KYGBgDQrplqLmlbDlrprnvqnjgajlkbzjgbPlh7rjgZfjga7kvosyDQpgYGB7cn0NCiPku7vmhI/jga5u44GL44KJbeOBvuOBp+i2s+OBl+eul+OCkuOBmeOCi+mWouaVsA0KZl9zdW0yIDwtIGZ1bmN0aW9uKG4gPSAzLCBtKSB7DQogIHN1bSA8LSAwICPliJ3mnJ/lgKTjga7oqK3lrpoNCiAgI2ZvciBsb29w44KS5L2/44Gj44Gm6Laz44GX566X44Gu57mw44KK6L+U44GX44KS5a6f54++DQogIGZvcihqIGluIG46bSkgeyAjZm9yIGxvb3Djga7plovlp4vngrnjga9uLCDntYLkuobngrnjga9tDQogICAgc3VtIDwtIHN1bSArIGoNCiAgfQ0KICByZXR1cm4oc3VtKQ0KfQ0KI+mWouaVsOWRvOOBs+WHuuOBl++8huS7o+WFpQ0KdGVzdCA8LSBmX3N1bTIobiA9IDEwMCwgbSA9IDEwMDApICPplqLmlbDjgpLlkbzjgbPlh7rjgZfjgabjgIHmiLvjgorlgKTjgpJ0ZXN044Gr5Luj5YWlDQp0ZXN0DQpgYGANCiMjIyMg6Zai5pWw5a6a576p44O75ZG844Gz5Ye644GX44Gr44GK44GR44KL5aSx5pWX44Od44Kk44Oz44OIDQrlrprnvqnjgZXjgozjgabjgYTjgarjgYTjg5Hjg6njg6Hjg7zjgr/jgavlvJXmlbDjgpLmuKHjgZnloLTlkIgNCmBgYHtyfQ0KZl9zdW0obiA9IDEwMCwgbSA9IDEwMDApDQpgYGANCuODh+ODleOCqeODq+ODiOOBruW8leaVsOOBjOaMh+WumuOBleOCjOOBpuOBhOOBquOBhOmWouaVsOOBquOBruOBq+W8leaVsOOCkuaMh+WumuOBl+OBquOBi+OBo+OBn+WgtOWQiA0KYGBge3J9DQpmX3N1bTIobiA9IDEwMCkNCmBgYA0KDQo=</div>
 
 
 
