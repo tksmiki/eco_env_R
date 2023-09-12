@@ -41,7 +41,7 @@
 
 ## 4.4 メタデータを活用した大量のデータの自動読み込み
 ### 4.4.1 自動読み込み例1: 植物プランクトンの種構成データ
-4.2のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。
+4.2のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。<br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./test_phytoplankton/phyto_test.nb.html" target="_blank" rel="noopener noreferrer">phyto_test.nb.html</a><br>
 
