@@ -1,0 +1,27 @@
+type,species,cells
+cyano,Microcystis wesenbergii,1
+diatom,Synedra sp.,19
+cyano,Coelosphaerium kuetzingianum,2
+green,Micrasterias hardyi,1
+cyano,Tetraedron gracile,1
+cyano,Chroococcus dispersus,16
+cyano,Microcystis aeruginosa,12
+cyano,Peridinium sp.,1
+cyano,Aphanocapsa sp.,2
+diatom,Asterionella formosa,2
+diatom,Nitzschia sp.,1
+diatom,Asterionella sp.,3
+diatom,Aulacoseira ambigua,9
+diatom,Aulacoseira granulata,3
+diatom,Cymbella sp.,1
+diatom,Melosira varians,6
+diatom,Fragilaria crotonensis,2
+green,Mougeotia sp.,6
+green,Spirogyra sp.,3
+green,Actinastrum hantzschii,4
+green,Botryococcus braunii,8
+green,Cosmarium sp.,1
+green,Paulschulzia pseudovolvox,3
+green,Staurastrum dorsidentiferum,2
+motile,Ceratium hirundinella,12
+motile,Euglena proxima,2
