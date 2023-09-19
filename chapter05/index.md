@@ -15,4 +15,5 @@
 ## 植物プランクトンの種組成データについての整頓
 <b>phyto_test.R</b>を第4章に引き続き使います（15行目以降）。このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="../chapter04/test_phytoplankton/phyto_test.nb.html" target="_blank" rel="noopener noreferrer">phyto_test.nb.html</a><br>
+「ここから第5章の内容」の見出し以降が第5章の内容です。
 ## 微生物の炭素代謝データについての整頓
