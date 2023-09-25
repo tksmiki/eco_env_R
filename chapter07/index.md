@@ -5,4 +5,3 @@
 [phyto_metadata.obj](./phyto_metadata.obj)
 [phyto_ryuko_data.obj](./phyto_ryuko_data.obj)
 [summary_ecopl.obj](./summary_ecopl.obj)
-[DatasaurusDozen.csv](./DatasaurusDozen.csv)
