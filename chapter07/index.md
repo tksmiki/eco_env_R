@@ -5,3 +5,11 @@
 [phyto_metadata.obj](./phyto_metadata.obj)
 [phyto_ryuko_data.obj](./phyto_ryuko_data.obj)
 [summary_ecopl.obj](./summary_ecopl.obj)
+
+
+### Rサンプルコード
+Rプログラミングの基本的な部分ですので、ご自分で新規のRスクリプトを作ってコードを書きこんでいくことを強くお勧めします。以下のサンプルスクリプトは参考までに使うのが良いでしょう。<br>
+[advanced_univariate.R](./advanced_univariate.R)
+
+このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
+<a href="./advanced_univariate.nb.html" target="_blank" rel="noopener noreferrer">advanced_univariate.nb.html</a><br>
