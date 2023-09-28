@@ -1,0 +1,532 @@
+---
+title: "multivariate_plot.Rに対応したR Notebook"
+output: html_notebook
+---
+
+## 第8章の内容
+
+### データの準備
+まずは第6章までと同じデータを読み込む
+```{r}
+###For chapter 08
+phyto_metadata <- readRDS("phyto_metadata.obj")
+species_ryuko_data <- readRDS("phyto_ryuko_data.obj")
+metadata_ecoplate <- readRDS("metadata_ecopl.obj")
+summary_ecoplate <- readRDS("summary_ecopl.obj")
+species_richness <- apply(species_ryuko_data > 0, 1, sum)
+total_abundance <- apply(species_ryuko_data, 1, sum)
+```
+エコプレートで使用されている31種類の有機炭素基質の名前リストをベクトルとして用意しておく
+```{r}
+substrate_name <- c("Pyruvic-Acid-Methyl-Ester", "Tween-40", "Tween-80","alpha-Cyclodextrin", "Glycogen", "D-Cellobiose","alpha-D-Lactose", "beta-Methyl-D-Glucoside", "D-Xylose", "i-Erythritol", "D-Mannitol","N-Acetyl-D-Glucosamine", "D-Glucosaminic-Acid", "Glucose-1-Phosphate","alpha-Glycerol-Phosphate","D-Galactonic-Acid-gamma-Lactone", "D-Galacturonic-Acid", "2-Hydroxy-Benzoic-Acid", "4-Hydroxy-Benzoic-Acid", "gamma-Hydroxybutyric-Acid", "Itaconic-Acid", "alpha-Ketobutyric-Acid", "D-Malic-Acid", "L-Arginine", "L-Asparagine", "L-Phenylalanine", "L-Serine", "L-Threonine", "Glycyl-L-Glutamic-Acid", "Phenylethyl-amine", "Putrescine")
+
+substrate_jpn <- c("Pyruvic-Acid-Methyl-Ester", "Tween-40", "Tween-80","alpha-Cyclodextrin", "Glycogen", "D-Cellobiose","alpha-D-Lactose", "beta-Methyl-D-Glucoside", "D-Xylose", "i-Erythritol", "D-Mannitol","N-Acetyl-D-Glucosamine", "D-Glucosaminic-Acid", "Glucose-1-Phosphate","alpha-Glycerol-Phosphate","D-Galactonic-Acid-gamma-Lactone", "D-Galacturonic-Acid", "2-Hydroxy-Benzoic-Acid", "4-Hydroxy-Benzoic-Acid", "gamma-Aminobutyric-acid", "Itaconic-Acid", "alpha-Ketobutyric-Acid", "D-Malic-Acid", "L-Arginine", "L-Asparagine", "L-Phenylalanine", "L-Serine", "L-Threonine", "Glycyl-L-Glutamic-Acid", "Phenylethyl-amine", "Putrescine")
+```
+パッケージの読み込み
+```{r}
+library(rgl)
+library(vegan)
+```
+
+
+### 8.1 多変量と次元削減
+#### 線形回帰の可視化(復習)
+エコプレートデータの一部を使う
+```{r}
+#散布図の描画
+plot(
+  s05 ~ s04, data = summary_ecoplate, #エコプレートデータの4番目と5番目の基質に注目
+  type = "p", 
+  cex = 3,
+  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  xlab = substrate_name[4],
+  ylab = substrate_name[5],
+  xlim = c(0, 4),　#x軸の描画範囲(ただしこのHTMLでは縦横比aspの指定と両立しない)
+  ylim = c(0, 4)
+  #,asp = 1.0　　#縦横比の指定(ここでは指定しない)
+)
+#線形回帰分析
+model01 <- lm(s05 ~ s04, data = summary_ecoplate)
+#回帰直線の追加
+abline(model01, lty = 5)
+```
+#### 次元削減の可視化
+上の線形回帰に使ったのと同じデータを使う
+```{r}
+#散布図
+plot(
+  s05 ~ s04, data = summary_ecoplate, 
+  type = "p", 
+  cex = 3,
+  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  xlab = substrate_name[4],
+  ylab = substrate_name[5],
+  xlim = c(0, 4),
+  ylim = c(0, 4)
+  #,asp = 1.0
+)
+#線形回帰分析
+model01 <- lm(s05 ~ s04, data = summary_ecoplate)
+#回帰直線の追加
+abline(model01, lty = 5)
+#主成分分析
+model02 <- summary(capscale(summary_ecoplate[,4:5] ~ 1, distance = "euclidean"))
+#主成分分析の結果から、第1主成分軸の傾きを計算
+slope_PC1 <- model02$species[2,1]/model02$species[1,1]
+#第1主成分軸の切片を計算
+intercept_PC1 <- mean(summary_ecoplate$s05) - slope_PC1*mean(summary_ecoplate$s04)
+#第1主成分軸の追加
+abline(intercept_PC1, slope_PC1)
+par(new = T)
+#観測データの平均値を示す点を追加
+plot(
+  mean(summary_ecoplate$s04), mean(summary_ecoplate$s05), #平均値の計算
+  cex = 3,
+  pch = 3,
+  xlim = c(0, 4),
+  ylim = c(0, 4),
+  xlab = "", ylab = ""
+  #,asp = 1.0
+)
+```
+第1主成分軸上に移したデータをグラフ化する(図8.3B)
+```{r}
+#グラフの縦軸用にダミーで値ゼロのベクトルを用意
+y_dummy <- rep(0, length(summary_ecoplate[,1]))
+#横軸に第1主成分軸のsite score、縦軸0の散布図を描く
+plot(
+  y_dummy ~ model02$sites[, 1],
+  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  cex = 3,
+  xlim = c(-2,2), ylim = c(-0.5,0.5),
+  xlab = "New axis",
+  ylab = ""
+)
+par(new = T)
+#平均値＝原点(0, 0)を強調するためにマークを追加
+plot(
+  0.0, 0.0,
+  cex = 3,
+  pch = 3,
+  xlim = c(-2,2), ylim = c(-0.5,0.5),
+  xlab = "", ylab = ""
+)
+```
+#### ダメ押しの次元削減例
+3次元空間上で，2次元へと次元削減した平面とベクトルを描画してみる(Rコードを実行すれば別ウィンドウに表示されますが、このHTML上には表示されません)
+```{r}
+####Plot 3D data####
+library(rgl) #rglパッケージを使います
+#エコプレートデータの基質4, 5, 6を使って三次元散布図を描く
+plot3d(
+  x = summary_ecoplate$s04, y = summary_ecoplate$s05, z = summary_ecoplate$s06,
+  xlab = substrate_name[4], ylab = substrate_name[5], zlab = substrate_name[6],
+  type = "s",
+  size = 3,
+  col = c(2,9)[as.factor(metadata_ecoplate$treatment)]
+)
+#この3次元データに対して主成分分析を実行
+model03 <- summary(capscale(summary_ecoplate[,4:6] ~ 1, distance = "euclidean"))
+#PC1-PC2 plane can be defined by the orthogonal vector (i.e, PC3)
+#第1主成分軸ー第2主成分軸が張る平面は，この平面と直交するベクトル(すなわち第3主成分軸)で定義可能
+PC1_coeff <- model03$species[1:3,1]
+PC2_coeff <- model03$species[1:3,2]
+PC3_coeff <- model03$species[1:3,3]
+#観測データの平均値を計算
+new_origin <- c(mean(summary_ecoplate$s04), mean(summary_ecoplate$s05), mean(summary_ecoplate$s06))
+#切片の計算
+intercept_coeff <- (PC3_coeff %*% new_origin)*-1.0
+##第1主成分軸ー第2主成分軸が張る平面の描画(法線ベクトルPC3_coeffと切片で定義される)
+planes3d(PC3_coeff[1], PC3_coeff[2], PC3_coeff[3], intercept_coeff, col = "blue", alpha = 0.5)
+#第1主成分軸をベクトルとして描画
+arrow3d(
+  p0 = new_origin,
+  p1 = new_origin + PC1_coeff*0.4,
+  s = 1/4,
+  type = "rotation"
+)
+#第2主成分軸をベクトルとして描画
+arrow3d(
+  p0 = new_origin,
+  p1 = new_origin + PC2_coeff*0.4,
+  s = 1/4,
+  type = "rotation"
+)
+```
+2次元平面へ移したデータの可視化(1次元への次元削減)
+```{r}
+####Reduction to 2D####
+plot(
+  model03$sites[, 2] ~ model03$sites[, 1],
+  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  cex = 3,
+  xlim = c(-3,3), ylim = c(-3,3),
+  xlab = "New axis 1",
+  ylab = "New axis 2"
+  #,asp = 1.0
+)
+```
+1次元直線上へ移したデータの可視化(1次元への次元削減)
+```{r}
+####Reduction to 1D####
+y_dummy <- rep(0, length(summary_ecoplate[,1]))
+plot(
+  y_dummy ~ model03$sites[, 1],
+  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  cex = 3,
+  xlim = c(-3,3), ylim = c(-0.5,0.5),
+  xlab = "New axis 1",
+  ylab = ""
+)
+```
+### 8.2 多変量データの可視化１：主成分分析
+#### 8.2.1 主成分分析は座標軸の回転を意味する
+次のものもHTML上では表示されませんが、Rスクリプトとして実行すれば別ウィンドウに表示されます
+```{r}
+####PCA for 3D data with 3 PC axes####
+#3次元散布図
+plot3d(
+  x = summary_ecoplate$s04, y = summary_ecoplate$s05, z = summary_ecoplate$s06,
+  xlab = substrate_name[4], ylab = substrate_name[5], zlab = substrate_name[6],
+  type = "s",
+  size = 3,
+  col = c(2,9)[as.factor(metadata_ecoplate$treatment)]
+)
+#3次元データに対する主成分分析
+model03 <- summary(capscale(summary_ecoplate[,4:6] ~ 1, distance = "euclidean"))
+#主成分軸の方向を表すベクトルを抽出
+PC1_coeff <- model03$species[1:3,1]
+PC2_coeff <- model03$species[1:3,2]
+PC3_coeff <- model03$species[1:3,3]
+new_origin <- c(mean(summary_ecoplate$s04), mean(summary_ecoplate$s05), mean(summary_ecoplate$s06))
+intercept_coeff <- (PC3_coeff %*% new_origin)*-1.0
+planes3d(PC3_coeff[1], PC3_coeff[2], PC3_coeff[3], intercept_coeff, col = "blue", alpha = 0.5)
+#主成分軸のベクトルを重ね合わせ
+arrow3d(
+  p0 = new_origin,
+  p1 = new_origin + PC1_coeff*0.4,
+  s = 1/4,
+  type = "rotation"
+)
+arrow3d(
+  p0 = new_origin,
+  p1 = new_origin + PC2_coeff*0.4,
+  s = 1/4,
+  type = "rotation"
+)
+arrow3d(
+  p0 = new_origin,
+  p1 = new_origin + PC3_coeff*0.4,
+  s = 1/4,
+  type = "rotation"
+)
+
+```
+#### 8.2.2 主成分分析のコーディング
+31種類の有機炭素基質への反応データに対する主成分分析
+```{r}
+####PCA for ecoplate#####
+#主成分分析を実行し、そのまとめ結果をオブジェクトPCA_model01に代入
+PCA_model01 <- summary(capscale(summary_ecoplate ~ 1, distance = "euclidean"))
+```
+```{r}
+#結果を表示してみる
+PCA_model01
+
+```
+```{r}
+#各データの主成分軸上の座標の表示
+PCA_model01$sites
+```
+
+最初の二つの主成分軸に関して可視化→つまり二次元への次元削減
+```{r}
+#最初の二つの主成分軸上の座標点をベクトルに格納
+PC1_01 <- PCA_model01$sites[,1]
+PC2_01 <- PCA_model01$sites[,2]
+#散布図
+plot(
+  PC2_01 ~ PC1_01,　#モデル式
+  cex = 3, pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],#処理(treatment)の違いを因子に変換すれば，それによって各点のマークを指定できる
+  xlab = "PC1 (21.1 %)", ylab = "PC2 (13.8 %) "
+)
+```
+
+PCAの練習：植物プランクトンデータに対する主成分分析
+```{r}
+####PCA for phytoplankton####
+#PCAの実行
+PCA_model02 <- summary(capscale(species_ryuko_data ~ 1, distance = "euclidean"))
+#PCAの結果の表示(寄与率の確認が必要)
+PCA_model02
+#主成分軸上の座標の表示
+PCA_model02$sites
+
+#最初の2軸分の座標情報をベクトルに格納
+PC1_02 <- PCA_model02$sites[,1]
+PC2_02 <- PCA_model02$sites[,2]
+#散布図
+plot(
+  PC2_02 ~ PC1_02,　#モデル式
+  cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
+  xlab = "PC1 (62.0%)", ylab = "PC2 (28.3 %) "
+)
+```
+#### 8.2.3 主成分分析のスケール依存性
+ニューヨークの大気データについて読み込んで前処理
+```{r}
+####PCA for airquality data####
+data("airquality") #データの読み込み
+#基本的な統計量を表示する
+summary(airquality)
+#欠損データを取り除き、新しいオブジェクトair_dataに格納する
+air_data <- na.omit(airquality)
+```
+データの標準化をしない場合の可視化(図8.9作成用のコード)
+```{r}
+#PCAの実行
+PCA_model03 <- summary(capscale(air_data[,1:4] ~ 1, distance = "euclidean"))
+#PCAの結果の表示(寄与率の確認が必要)
+PCA_model03
+#最初の主成分軸二つについて座標値をベクトルに格納
+PC1_03 <- PCA_model03$sites[,1]
+PC2_03 <- PCA_model03$sites[,2]
+#散布図作成
+plot(
+  PC2_03 ~ PC1_03,
+  cex = 0.5, pch = air_data$Month,
+  xlab = "PC1 (89.0 %)", ylab = "PC2 (10.5 %) ",
+  asp = 1
+)
+#散布図上の点のそばに、文字を追加する
+text(PC1_03 + 0.5, PC2_03, labels = rownames(air_data), cex = 0.8)
+```
+データの標準化をする場合の可視化(図8.10作成用のコード)
+```{r}
+#scale関数を使ってデータの標準化
+air_data2 <- scale(air_data)
+#標準化後のデータの基本統計量
+summary(air_data2[,1:4])
+#標準化されたデータに対してPCを実行
+PCA_model04 <- summary(capscale(air_data2[,1:4] ~ 1, distance = "euclidean"))
+#PCAの結果の表示(寄与率の確認が必要)
+PCA_model04
+#最初の主成分軸2つの上の座標値をベクトルに格納
+PC1_04 <- PCA_model04$sites[,1]
+PC2_04 <- PCA_model04$sites[,2]
+#散布図
+plot(
+  PC2_04 ~ PC1_04,
+  cex = 0.5, pch = air_data$Month,
+  xlab = "PC1 (59.0 %)", ylab = "PC2 (22.4 %) ",  
+  asp = 1
+)
+#文字の追加
+text(PC1_04+0.05, PC2_04, labels = rownames(air_data), cex = 0.8)
+```
+標準化はいつもしたほうがよいのか？
+```{r}
+#Large variations between variables with the same unit
+#個体数が大きく異なる2種類の植物プランクトンの比較
+summary(species_ryuko_data$`Fragilaria crotonensis`)
+summary(species_ryuko_data$`Micrasterias hardyi`)
+```
+
+BOX8 R標準の主成分分析用関数を使う場合
+```{r}
+####Standard way of PCA####
+#標準化しない場合
+PCA_s01 <- prcomp(air_data[,1:4], scale. = F)
+#標準化する場合
+PCA_s02 <- prcomp(air_data[,1:4], scale. = T)
+#標準化しない場合の結果
+summary(PCA_s01)
+#可視化(標準化無し)
+biplot(PCA_s01)
+#可視化(標準化有り)
+biplot(PCA_s02)
+```
+### 8.3 主成分分析の弱点を克服する：さまざまな距離と非類似度
+#### 8.3.2　さまざまな距離を用いた（非）類似度 の定量化
+(非)類似度の理解のための仮想データ
+```{r}
+#ベクトル(sp1, sp2)からデータフレームを作る
+sp1 <- c(3.0, 0.0, 0.1, 6.0)
+sp2 <- c(3.5, 0.5, 0.0, 6.0)
+comm <- data.frame(sp.1 = sp1, sp.2 = sp2)　#data.frame関数でデータフレームが作れる
+rownames(comm) <- c("A", "B", "C", "D")　#列名を付ける
+```
+今作ったデータを単純に2次元散布図にする
+```{r}
+plot(
+  sp.2 ~ sp.1, data = comm,
+  cex = 3.0,
+  xlim = c(0,7), ylim = c(0,7),
+  asp = 1.0
+)
+text(comm$sp.1, comm$sp.2, labels = rownames(comm), cex = 0.8)
+```
+実際に距離を計算してみる
+```{r}
+#examples of distance
+#ユークリッド距離
+vegdist(comm, method = "euclidean")  #Euclidean 
+#ジャッカード距離
+vegdist(comm, method = "jaccard", binary = TRUE) #Jaccard
+#ブレイ・カーティス距離
+vegdist(comm, method = "bray") #Bray-Curtis
+```
+#### 8.3.4　主座標分析（PCoA）
+##### 仮想二次元データ(comm)に対する主成分分析
+```{r}
+####PCoA for comm####
+#ブレイ・カーティス距離を用いて主座標分析を実行
+PCoA_comm_BC <- summary(capscale(comm ~ 1, distance = "bray"))
+#結果を確認(特に寄与率)
+PCoA_comm_BC
+#主座標軸1, 2上の座標値をベクトルに格納
+PCoA1_comm_BC <- PCoA_comm_BC$sites[,1]
+PCoA2_comm_BC <- PCoA_comm_BC$sites[,2]
+#散布図
+plot(
+  PCoA2_comm_BC ~ PCoA1_comm_BC,
+  cex = 3,
+  xlab = "PCoA1 (54.5 %)", ylab = "PCoA2 (41.8 %) ",
+  asp = 1
+)
+#各データを示す文字を追加
+text(PCoA1_comm_BC, PCoA2_comm_BC, labels = rownames(comm), cex = 0.8)
+```
+##### 植物プランクトンデータの主座標分析
+ジャッカード距離を使う場合
+```{r}
+#With Jaccard
+#二値化するためにデータの中身を新しいオブジェクトにコピー
+species_ryuko_data_b <- species_ryuko_data #copy 
+#二値化する
+species_ryuko_data_b[species_ryuko_data_b > 0] <- 1 #binalization
+#二値化したデータに対してjaccard距離を選んで主座標分析を実行
+PCoA_ryuko_J <- summary(capscale(species_ryuko_data_b ~ 1, distance = "jaccard"))
+#結果の確認(特に寄与率)
+PCoA_ryuko_J
+#最初の二つの主座標軸上の座標値をベクトルに格納
+PCoA1_ryuko_J <- PCoA_ryuko_J$sites[,1]
+PCoA2_ryuko_J <- PCoA_ryuko_J$sites[,2]
+#散布図の作成
+plot(
+  PCoA2_ryuko_J ~ PCoA1_ryuko_J,
+  cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
+  xlab = "PCoA1 (19.7 %)", ylab = "PCoA2 (12.3 %) ",
+  asp = 1,
+  main = "With Jaccard"
+)
+```
+ブレイ・カーティス距離を使う場合
+```{r}
+#With Bray-Curtis
+PCoA_ryuko_BC <- summary(capscale(species_ryuko_data ~ 1, distance = "bray"))
+PCoA_ryuko_BC
+
+PCoA1_ryuko_BC <- PCoA_ryuko_BC$sites[,1]
+PCoA2_ryuko_BC <- PCoA_ryuko_BC$sites[,2]
+plot(
+  PCoA2_ryuko_BC ~ PCoA1_ryuko_BC,
+  cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
+  xlab = "PCoA1 (25.4 %)", ylab = "PCoA2 (14.7 %) ",
+  asp = 1,
+  main = "With Bray-Curtis"
+)
+```
+Hellinger距離を使う場合
+```{r}
+#Hellinger
+#decostand関数を使ってまずは、データをhellinger変換
+species_ryuko_data_H <- decostand(species_ryuko_data, method = "hellinger")
+#hellinger変換後のデータに対してユークリッド距離を計算すれば、hellinger距離となる。これを用いて主座標分析を実行
+PCoA_ryuko_H <- summary(capscale(species_ryuko_data_H ~ 1, distance = "euclidean"))
+PCoA_ryuko_H
+
+PCoA1_ryuko_H <- PCoA_ryuko_H$sites[,1]
+PCoA2_ryuko_H <- PCoA_ryuko_H$sites[,2]
+plot(
+  PCoA2_ryuko_H ~ PCoA1_ryuko_H,
+  cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
+  xlab = "PCoA1 (22.4 %)", ylab = "PCoA2 (14. %) ",
+  asp = 1,
+  main = "With Hellinger"
+)
+```
+
+##### 微生物データの主座標分析
+とくにデータの前処理(閾値を用いた二値化)が必要なジャッカード距離の場合についてのコード
+```{r}
+####PCoA for ecoplate####
+#With Jaccard
+#データを大幅にいじる場合は、データを丸々新しいオブジェクトにコピーするのがよい
+summary_ecoplate_b <- summary_ecoplate #copy
+#代謝を「アリ」と判定する時に吸光度の最小値の設定(ここでは0.2)
+minimum_strength <- 0.2
+#minimum_strengthより吸光度が小さい値をゼロに転換する
+summary_ecoplate_b[summary_ecoplate_b < minimum_strength] <- 0 #binalization, ゼロより大きい値を１に転換する
+summary_ecoplate_b[summary_ecoplate_b > 0] <- 1 #binalization
+#二値化したデータに対してjaccard距離を選んで主座標分析を実行
+PCoA_ecoplate_J <- summary(capscale(summary_ecoplate_b ~ 1, distance = "jaccard"))
+PCoA_ecoplate_J 
+
+PCoA1_ecoplate_J <- PCoA_ecoplate_J$sites[,1]
+PCoA2_ecoplate_J <- PCoA_ecoplate_J$sites[,2]
+plot(
+  PCoA2_ecoplate_J ~ PCoA1_ecoplate_J ,
+  cex = 3, pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  xlab = "PCoA1 (51.9 %)", ylab = "PCoA2 (30.2 %) ",
+  asp = 1,
+  main = "With Jaccard"
+)
+```
+
+#### BOX10 可視化関数の一貫性の無さについて
+```{r}
+####BOX10 Inconsistent behavior of visualization####
+summary(prcomp(comm, scale. = T))
+summary(prcomp(comm, scale. = F))
+
+biplot(prcomp(comm, scale. = T))
+biplot(prcomp(comm, scale. = F))
+ordiplot(capscale(comm ~ 1, distance = "euclidean"), type = "text")
+ordiplot(capscale(scale(comm) ~ 1, distance = "euclidean"), type = "text")
+ordiplot(prcomp(comm, scale. = T), type = "text")
+ordiplot(prcomp(comm, scale. = F), type="text")
+ordiplot(prcomp(scale(comm), scale. = F), type = "text")
+```
+### 8.4 多変量データの可視化２：階層的クラスター分析
+#### 8.4.2 階層クラスタリングによる可視化
+```{r}
+####Hierarchical clustering####
+#植物プランクトンのデータに対してブレイ・カーティス距離を計算
+species_b.d <- vegdist(species_ryuko_data, method = "bray")
+#計算済みの距離行列(species_b.d)を用いて階層クラスタリングを実行
+hclust_model <- hclust(species_b.d, method = "ward.D2")
+```
+
+階層クラスタリングと非階層クラスタリングを比較
+```{r}
+#階層クラスタリングの結果を可視化
+plot(
+  hclust_model,
+  hang = -1,
+  main = "phytoplankton composition with Bray-Curtis",
+  label = phyto_metadata$YYMMDD
+)
+
+#非階層クラスタリングの結果を可視化(主座標分析の結果)
+plot(
+  PCoA2_ryuko_BC ~ PCoA1_ryuko_BC,
+  cex = 2, pch = as.numeric(as.factor(phyto_metadata$month)),
+  xlab = "PCoA1 (25.4 %)", ylab = "PCoA2 (14.7 %) ",
+  asp = 1,
+  main = "With Bray-Curtis"
+)
+#各サンプルに文字を追加
+text(PCoA1_ryuko_BC + 0.25, PCoA2_ryuko_BC, label = phyto_metadata$YYMMDD, cex = 0.8)
+```
+
