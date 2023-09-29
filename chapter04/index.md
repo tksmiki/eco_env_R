@@ -23,8 +23,8 @@
 第4章・第5章では一番たくさんファイルを使います。必要なファイルはすべてここからダウンロードできます。必ず以下の手順に従って指定したフォルダにファイルを保存しましょう。別のところに間違えて保存してしまうと、Rからそのファイルを見つけられなくなってしまいます。
 
 #### [2.1] 植物プランクトンの種組成に関するメタデータ・観測データのダウンロード
-新しいタブで以下のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。
-<button type="button" class="btn btn-primary"><a href="./test_phytoplankton/" target="_blank" rel="noopener noreferrer">test_phytoplankton</a></button><br>
+新しいタブで次のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。
+<button type="button" class="btn btn-secondary"><a href="./test_phytoplankton/" target="_blank" rel="noopener noreferrer">test_phytoplankton</a></button><br>
 #### [2.2] 細菌群集の炭素代謝に関するメタデータ・観測データのダウンロード
 新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。
 <a href="./test_ecoplate/" target="_blank" rel="noopener noreferrer"><b>test_ecoplate</b></a>
