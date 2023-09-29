@@ -24,10 +24,10 @@
 
 ###### [2.1] 植物プランクトンの種組成に関するメタデータ・観測データのダウンロード
 新しいタブで次のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。
-<a href="./test_phytoplankton/" target="_blank" rel="noopener noreferrer"><b>test_phytoplankton</b></a><br>
+<a href="./test_phytoplankton/" rel="noopener noreferrer"><b>test_phytoplankton</b></a><br>
 ###### [2.2] 細菌群集の炭素代謝に関するメタデータ・観測データのダウンロード
 新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。
-<a href="./test_ecoplate/" target="_blank" rel="noopener noreferrer"><b>test_ecoplate</b></a>
+<a href="./test_ecoplate/"  rel="noopener noreferrer"><b>test_ecoplate</b></a>
 
 ##### 4.2 エクセルを使ってメタデータをまとめる
 以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！
