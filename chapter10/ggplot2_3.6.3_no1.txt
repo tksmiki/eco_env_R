@@ -1,0 +1,328 @@
+> install.packages("ggplot2")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/biomiki/Documents/R/win-library/3.6’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘colorspace’, ‘utf8’, ‘farver’, ‘labeling’, ‘munsell’, ‘R6’, ‘RColorBrewer’, ‘viridisLite’, ‘fansi’, ‘magrittr’, ‘pillar’, ‘pkgconfig’, ‘cli’, ‘glue’, ‘gtable’, ‘isoband’, ‘lifecycle’, ‘rlang’, ‘scales’, ‘tibble’, ‘vctrs’, ‘withr’
+
+
+  There are binary versions available but the source versions are later:
+             binary source needs_compilation
+colorspace    2.0-1  2.1-0              TRUE
+utf8          1.2.1  1.2.2              TRUE
+farver        2.1.0  2.1.1              TRUE
+R6            2.5.0  2.5.1             FALSE
+RColorBrewer  1.1-2  1.1-3             FALSE
+viridisLite   0.4.0  0.4.1             FALSE
+fansi         0.4.2  1.0.4              TRUE
+magrittr      2.0.1  2.0.3              TRUE
+pillar        1.6.0  1.8.1             FALSE
+cli           2.5.0  3.6.0              TRUE
+glue          1.4.2  1.6.2              TRUE
+gtable        0.3.0  0.3.1             FALSE
+isoband       0.2.4  0.2.7              TRUE
+lifecycle     1.0.0  1.0.3             FALSE
+rlang        0.4.11  1.0.6              TRUE
+scales        1.1.1  1.2.1             FALSE
+tibble        3.1.1  3.1.8              TRUE
+vctrs         0.3.8  0.5.2              TRUE
+withr         2.4.2  2.5.0             FALSE
+ggplot2       3.3.3  3.4.0             FALSE
+
+  Binaries will be installed
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/colorspace_2.0-1.zip'
+Content type 'application/zip' length 2590904 bytes (2.5 MB)
+downloaded 2.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/utf8_1.2.1.zip'
+Content type 'application/zip' length 216497 bytes (211 KB)
+downloaded 211 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/farver_2.1.0.zip'
+Content type 'application/zip' length 1975759 bytes (1.9 MB)
+downloaded 1.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/labeling_0.4.2.zip'
+Content type 'application/zip' length 62943 bytes (61 KB)
+downloaded 61 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/munsell_0.5.0.zip'
+Content type 'application/zip' length 245302 bytes (239 KB)
+downloaded 239 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/fansi_0.4.2.zip'
+Content type 'application/zip' length 225105 bytes (219 KB)
+downloaded 219 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/magrittr_2.0.1.zip'
+Content type 'application/zip' length 236016 bytes (230 KB)
+downloaded 230 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/pkgconfig_2.0.3.zip'
+Content type 'application/zip' length 22186 bytes (21 KB)
+downloaded 21 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/cli_2.5.0.zip'
+Content type 'application/zip' length 534931 bytes (522 KB)
+downloaded 522 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/glue_1.4.2.zip'
+Content type 'application/zip' length 154763 bytes (151 KB)
+downloaded 151 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/isoband_0.2.4.zip'
+Content type 'application/zip' length 2889230 bytes (2.8 MB)
+downloaded 2.8 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/rlang_0.4.11.zip'
+Content type 'application/zip' length 1224139 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/tibble_3.1.1.zip'
+Content type 'application/zip' length 825897 bytes (806 KB)
+downloaded 806 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/vctrs_0.3.8.zip'
+Content type 'application/zip' length 1289331 bytes (1.2 MB)
+downloaded 1.2 MB
+
+package ‘colorspace’ successfully unpacked and MD5 sums checked
+package ‘utf8’ successfully unpacked and MD5 sums checked
+package ‘farver’ successfully unpacked and MD5 sums checked
+package ‘labeling’ successfully unpacked and MD5 sums checked
+package ‘munsell’ successfully unpacked and MD5 sums checked
+package ‘fansi’ successfully unpacked and MD5 sums checked
+package ‘magrittr’ successfully unpacked and MD5 sums checked
+package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+package ‘cli’ successfully unpacked and MD5 sums checked
+package ‘glue’ successfully unpacked and MD5 sums checked
+package ‘isoband’ successfully unpacked and MD5 sums checked
+package ‘rlang’ successfully unpacked and MD5 sums checked
+package ‘tibble’ successfully unpacked and MD5 sums checked
+package ‘vctrs’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\biomiki\AppData\Local\Temp\RtmpAFxn42\downloaded_packages
+installing the source packages ‘R6’, ‘RColorBrewer’, ‘viridisLite’, ‘pillar’, ‘gtable’, ‘lifecycle’, ‘scales’, ‘withr’, ‘ggplot2’
+
+trying URL 'https://cran.rstudio.com/src/contrib/R6_2.5.1.tar.gz'
+Content type 'application/x-gzip' length 63422 bytes (61 KB)
+downloaded 61 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/RColorBrewer_1.1-3.tar.gz'
+Content type 'application/x-gzip' length 11638 bytes (11 KB)
+downloaded 11 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/viridisLite_0.4.1.tar.gz'
+Content type 'application/x-gzip' length 1267090 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://cran.rstudio.com/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 479977 bytes (468 KB)
+downloaded 468 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/gtable_0.3.1.tar.gz'
+Content type 'application/x-gzip' length 92733 bytes (90 KB)
+downloaded 90 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/lifecycle_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 106854 bytes (104 KB)
+downloaded 104 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/scales_1.2.1.tar.gz'
+Content type 'application/x-gzip' length 270609 bytes (264 KB)
+downloaded 264 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/withr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 102089 bytes (99 KB)
+downloaded 99 KB
+
+trying URL 'https://cran.rstudio.com/src/contrib/ggplot2_3.4.0.tar.gz'
+Content type 'application/x-gzip' length 3148426 bytes (3.0 MB)
+downloaded 3.0 MB
+
+* installing *source* package 'R6' ...
+**  パッケージ 'R6' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'R6'
+    finding HTML links ...  完了 
+    R6Class                                 html  
+    as.list.R6                              html  
+    is.R6                                   html  
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (R6)
+* installing *source* package 'RColorBrewer' ...
+**  パッケージ 'RColorBrewer' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'RColorBrewer'
+    finding HTML links ...  完了 
+    ColorBrewer                             html  
+** building package indices
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (RColorBrewer)
+* installing *source* package 'viridisLite' ...
+**  パッケージ 'viridisLite' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'viridisLite'
+    finding HTML links ...  完了 
+    viridis                                 html  
+    viridis.map                             html  
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (viridisLite)
+* installing *source* package 'gtable' ...
+**  パッケージ 'gtable' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'gtable'
+    finding HTML links ...  完了 
+    bind                                    html  
+    gtable-package                          html  
+    gtable                                  html  
+    gtable_add_cols                         html  
+    gtable_add_grob                         html  
+    gtable_add_padding                      html  
+    gtable_add_rows                         html  
+    gtable_add_space                        html  
+    gtable_col                              html  
+    gtable_filter                           html  
+Rd warning: C:/Users/biomiki/AppData/Local/Temp/RtmpMxY7Oz/R.INSTALL1c8865de6a8/gtable/man/gtable_filter.Rd:12: file link 'regular expression' in package 'base' does not exist and so has been treated as a topic
+Rd warning: C:/Users/biomiki/AppData/Local/Temp/RtmpMxY7Oz/R.INSTALL1c8865de6a8/gtable/man/gtable_filter.Rd:15: file link 'as.character' in package 'base' does not exist and so has been treated as a topic
+    gtable_height                           html  
+    gtable_matrix                           html  
+    gtable_row                              html  
+    gtable_show_layout                      html  
+    gtable_spacer                           html  
+    gtable_trim                             html  
+    gtable_width                            html  
+    is.gtable                               html  
+    print.gtable                            html  
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (gtable)
+* installing *source* package 'lifecycle' ...
+**  パッケージ 'lifecycle' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+ loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) でエラー: 
+  namespace 'rlang' 0.4.11 is being loaded, but >= 1.0.6 is required
+ 呼び出し:  <Anonymous> ... withCallingHandlers -> loadNamespace -> namespaceImport -> loadNamespace
+ 実行が停止されました 
+ERROR: lazy loading failed for package 'lifecycle'
+* removing 'C:/Users/biomiki/Documents/R/win-library/3.6/lifecycle'
+Warning in install.packages :
+  installation of package ‘lifecycle’ had non-zero exit status
+* installing *source* package 'withr' ...
+**  パッケージ 'withr' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'withr'
+    finding HTML links ...  完了 
+    defer                                   html  
+    devices                                 html  
+    makevars_user                           html  
+    set_makevars                            html  
+    with_                                   html  
+    with_collate                            html  
+    with_connection                         html  
+    with_db_connection                      html  
+    with_dir                                html  
+    with_envvar                             html  
+    with_file                               html  
+    with_gctorture2                         html  
+    with_language                           html  
+    with_libpaths                           html  
+    with_locale                             html  
+    with_makevars                           html  
+    with_options                            html  
+    with_package                            html  
+Rd warning: C:/Users/biomiki/AppData/Local/Temp/RtmpqUwLG7/R.INSTALL128444b44cd6/withr/man/with_package.Rd:68: file link '.libPaths' in package 'base' does not exist and so has been treated as a topic
+    with_par                                html  
+    with_path                               html  
+    with_rng_version                        html  
+    with_seed                               html  
+    with_sink                               html  
+    with_temp_libpaths                      html  
+    with_tempfile                           html  
+    with_timezone                           html  
+    withr                                   html  
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (withr)
+ERROR: dependency 'lifecycle' is not available for package 'pillar'
+* removing 'C:/Users/biomiki/Documents/R/win-library/3.6/pillar'
+Warning in install.packages :
+  installation of package ‘pillar’ had non-zero exit status
+ERROR: dependency 'lifecycle' is not available for package 'scales'
+* removing 'C:/Users/biomiki/Documents/R/win-library/3.6/scales'
+Warning in install.packages :
+  installation of package ‘scales’ had non-zero exit status
+ERROR: dependencies 'lifecycle', 'scales' are not available for package 'ggplot2'
+* removing 'C:/Users/biomiki/Documents/R/win-library/3.6/ggplot2'
+Warning in install.packages :
+  installation of package ‘ggplot2’ had non-zero exit status
+
+The downloaded source packages are in
+	‘C:\Users\biomiki\AppData\Local\Temp\RtmpAFxn42\downloaded_packages’
