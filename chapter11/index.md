@@ -16,5 +16,5 @@ Rスクリプトをダウンロードして、RStudioで開いてください：
 R Notebookファイルをダウンロードしよう．ただし，R Notebookを扱うのが初めてな場合は自分でゼロから書くのがよいでしょう<br>
 [basic_plot_note.Rmd](./basic_plot_note.Rmd)<br>
 
-このR Notebookファイルから生成したHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_plot_note..nb.html" target="_blank" rel="noopener noreferrer">basic_plot_note.nb.html</a><br>
+このR Notebookファイルから生成したHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_plot_note.nb.html" target="_blank" rel="noopener noreferrer">basic_plot_note.nb.html</a><br>
 
