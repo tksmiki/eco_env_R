@@ -1,10 +1,10 @@
 #### 第6章
 ##### データの準備
 まずは第6章用のフォルダを作成し(たとえば、<b>chapter06</b>)、以下のファイルをダウンロードしよう<br>
-[metadata_ecopl.obj](./metadata_ecopl.obj)<br>
-[phyto_metadata.obj](./phyto_metadata.obj)<br>
-[phyto_ryuko_data.obj](./phyto_ryuko_data.obj)<br>
-[summary_ecopl.obj](./summary_ecopl.obj)<br>
+[metadata_ecopl.obj](../Robj/metadata_ecopl.obj)<br>
+[phyto_metadata.obj](../Robj/phyto_metadata.obj)<br>
+[phyto_ryuko_data.obj](../Robj/phyto_ryuko_data.obj)<br>
+[summary_ecopl.obj](../Robj/summary_ecopl.obj)<br>
 [DatasaurusDozen.csv](./DatasaurusDozen.csv)<br>
 
 ##### 6.1 まずは可視化
