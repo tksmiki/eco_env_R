@@ -6,9 +6,9 @@
 ##### 準備2
 第4章の続きを始めるにあたって、予期せぬエラー等がご自分で整理したデータファイルを保存したオブジェクトに含まれているかもしれません。そこで、第4章の最後でうまくいけば出来上がっているはずの状態をミスなく実現するため、以下の二つのファイルをダウンロードしてください。それぞれ別のフォルダに入れる必要があります。<br>
 <b>test_phytoplankton</b>に一つ目のファイルをダウンロード：
-[plankton_data.obj](../chapter04/test_phytoplankton/plankton_data.obj)
+[plankton_data.obj](../chapter04/test_phytoplankton/plankton_data.obj)<br>
 <b>test_ecoplate</b>に二つ目のファイルをダウンロード：
-[data_ecopl.obj](../chapter04/test_ecoplate/data_ecopl.obj)
+[data_ecopl.obj](../chapter04/test_ecoplate/data_ecopl.obj)<br>
 <br>
 これらのファイルのダウンロードが済んだら、本文の[5.2 データの整頓：解析に直結できる形に整える]の最初の段落の説明にしたがって，Rに読み込みましょう．
 
