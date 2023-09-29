@@ -2,8 +2,8 @@
 
 ##### データの準備
 まずは第11章用のフォルダを作成し(たとえば、<b>chapter11</b>)、以下のファイルをダウンロードしよう<br>
-[phyto_metadata.obj](./phyto_metadata.obj)<br>
-[phyto_ryuko_data.obj](./phyto_ryuko_data.obj)<br>
+[phyto_metadata.obj](../Robj/phyto_metadata.obj)<br>
+[phyto_ryuko_data.obj](../Robj/phyto_ryuko_data.obj)<br>
   
 ##### 11.1 きれいなグラフを描く：ggplot2 の内容
 Rスクリプトをダウンロードして、RStudioで開いてください：<br>
