@@ -13,13 +13,8 @@ Rスクリプトをダウンロードして、RStudioで開いてください：
 
 ### 11.2 Rスクリプトの整理整頓と共有方法：R Notebook の内容
 
-R Notebookファイルをダウンロードしよう．ただし，R Notebookを扱うのが初めてな場合は自分でゼロから書くのがよいでしょう
+R Notebookファイルをダウンロードしよう．ただし，R Notebookを扱うのが初めてな場合は自分でゼロから書くのがよいでしょう<br>
+[basic_plot_note.Rmd](./basic_plot_note.Rmd)<br>
 
+このR Notebookファイルから生成したHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_plot_note..nb.html" target="_blank" rel="noopener noreferrer">basic_plot_note.nb.html</a><br>
 
-### 6.1 まずは可視化
-
-このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_graphics.nb.html" target="_blank" rel="noopener noreferrer">basic_graphics.nb.html</a><br>
-
-### 6.2 基本の検定 6.3 回帰と相関　 
-Rスクリプトをダウンロードして、RStudioで開いてください：<br>
-[basic_test.R](./basic_test.R)<br>
