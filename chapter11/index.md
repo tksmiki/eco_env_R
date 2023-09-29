@@ -5,7 +5,7 @@
 [phyto_metadata.obj](./phyto_metadata.obj)<br>
 [phyto_ryuko_data.obj](./phyto_ryuko_data.obj)<br>
   
-##### 11.1 11.1 きれいなグラフを描く：ggplot2 の内容
+##### 11.1 きれいなグラフを描く：ggplot2 の内容
 Rスクリプトをダウンロードして、RStudioで開いてください：<br>
 [ggplot2_graphics.R](./ggplot2_graphics.R)<br>
 
