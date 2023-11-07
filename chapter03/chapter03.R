@@ -13,8 +13,8 @@ rownames(df1) <- test2_v
 df1
 mat1 <- as.matrix(df1)
 mat1
+class(mat1)
 
-df1
 
 test_list <- list()
 test_list[[1]] <- df1
