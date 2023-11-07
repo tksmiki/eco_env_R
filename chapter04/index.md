@@ -29,23 +29,23 @@
 新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。<br>
 <a href="./test_ecoplate/"  rel="noopener noreferrer"><b>test_ecoplate</b></a>
 
-##### 4.2 エクセルを使ってメタデータをまとめる
+##### 4.1 エクセルを使ってメタデータをまとめる
 以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！<br>
 [phyto_test.R](./test_phytoplankton/phyto_test.R)
 
-##### 4.3 プログラミングの基礎(if, loop, 関数)
+##### 4.2 プログラミングの基礎(if, loop, 関数)
 以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。<br>
-[chapter04_4-3.R](./chapter04_4-3.R) <br>
+[chapter04_4-2.R](./chapter04_4-2.R) <br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
-<a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
+<a href="./chapter04_4-2.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-2.nb.html</a><br>
 
-##### 4.4 メタデータを活用した大量のデータの自動読み込み
-###### 4.4.1 自動読み込み例1: 植物プランクトンの種構成データ
-4.2のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。<br>
+##### 4.3 メタデータを活用した大量のデータの自動読み込み
+###### 4.3.1 自動読み込み例1: 植物プランクトンの種構成データ
+4.1のところでダウンロードしたサンプルスクリプトphyto_test.Rを引き続き使います。<br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./test_phytoplankton/phyto_test.nb.html" target="_blank" rel="noopener noreferrer">phyto_test.nb.html</a><br>
 
-##### 4.4.2 自動読み込み例2: 細菌群集の炭素代謝データ（エコプレート）
+##### 4.3.2 自動読み込み例2: 細菌群集の炭素代謝データ（エコプレート）
 以下のサンプルスクリプトを<b>test_ecoplate</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下や<b>test_phytoplankton</b>の下に保存してはいけません！<br>
 [ecoplate_test.R](./test_ecoplate/ecoplate_test.R)<br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
