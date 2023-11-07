@@ -23,19 +23,19 @@
 第4章・第5章では一番たくさんファイルを使います。必要なファイルはすべてここからダウンロードできます。必ず以下の手順に従って指定したフォルダにファイルを保存しましょう。別のところに間違えて保存してしまうと、Rからそのファイルを見つけられなくなってしまいます。
 
 ###### [2.1] 植物プランクトンの種組成に関するメタデータ・観測データのダウンロード
-新しいタブで次のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。
+新しいタブで次のリンクを開いてファイルを<b>test_phytoplankon</b>フォルダの中に保存しましょう。<br>
 <a href="./test_phytoplankton/" rel="noopener noreferrer"><b>test_phytoplankton</b></a><br>
 ###### [2.2] 細菌群集の炭素代謝に関するメタデータ・観測データのダウンロード
-新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。
+新しいタブで以下のリンクを開いてファイルを<b>test_ecoplate</b>フォルダの中に保存しましょう。<br>
 <a href="./test_ecoplate/"  rel="noopener noreferrer"><b>test_ecoplate</b></a>
 
 ##### 4.2 エクセルを使ってメタデータをまとめる
-以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！
+以下のサンプルスクリプトを<b>test_phytoplankton</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下に保存してはいけません！<br>
 [phyto_test.R](./test_phytoplankton/phyto_test.R)
 
 ##### 4.3 プログラミングの基礎(if, loop, 関数)
-以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。
-[chapter04_4-3.R](./chapter04_4-3.R)
+以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。<br>
+[chapter04_4-3.R](./chapter04_4-3.R) <br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./chapter04_4-3.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-3.nb.html</a><br>
 
