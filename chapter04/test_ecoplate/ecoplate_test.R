@@ -6,7 +6,7 @@ no_sample <- length(metadata_ecoplate$data_file)
 for(j in 1:no_sample){
   print(j)
   file_path <- paste("./text_file/", metadata_ecoplate$data_file[j], sep = "")
-  dat_list[[j]] <- read.table(file_path, skip=5)
+  dat_list[[j]] <- read.table(file_path, skip = 5)
 }
 
 ####Function to load ecoplate data
@@ -28,7 +28,7 @@ load_ecoplate_data <- function(relative_path, file_list, no_skip = 5)
 load_ecoplate_data(relative_path = "./text_file/", file_list = metadata_ecoplate$data_file, no_skip = 5)
 data_ecoplate <- load_ecoplate_data(relative_path = "./text_file/", file_list = metadata_ecoplate$data_file, no_skip = 5)
 
-#Function with error management
+#Function with error management (for BOX, advanced)
 load_ecoplate_data2 <-  function(relative_path, file_list, no_skip = 5)    
 {
   data_list <- list() 
@@ -41,17 +41,17 @@ load_ecoplate_data2 <-  function(relative_path, file_list, no_skip = 5)
   return(data_list)  #output (return value) of this function
 }
 
-metadata_ecoplate_e1 <- read.csv("format_xitou_pattern_e1.csv", header=T)
+metadata_ecoplate_e1 <- read.csv("format_xitou_pattern_e1.csv", header = T)
 data_ecoplate2 <- load_ecoplate_data2(relative_path = "./text_file/", file_list = metadata_ecoplate_e1$data_file, no_skip = 5)
 
 ####Function to calculate the averages and standardization by control values
 ave_ecoplate <- function(data_f){
-  data_ave1<-(data_f$X1+data_f$X5+data_f$X9)/3.0  #take average
-  data_ave2<-(data_f$X2+data_f$X6+data_f$X10)/3.0
-  data_ave3<-(data_f$X3+data_f$X7+data_f$X11)/3.0
-  data_ave4<-(data_f$X4+data_f$X8+data_f$X12)/3.0
-  data_sum<-append(append(append(data_ave1,data_ave2),data_ave3),data_ave4)  
-  data_sum_nor<-data_sum - data_sum[1] #normalizing by water well
+  data_ave1 <- (data_f$X1 + data_f$X5 + data_f$X9)/3.0  #take average
+  data_ave2 <- (data_f$X2 + data_f$X6 + data_f$X10)/3.0
+  data_ave3 <- (data_f$X3 + data_f$X7+data_f$X11)/3.0
+  data_ave4 <- (data_f$X4 + data_f$X8 + data_f$X12)/3.0
+  data_sum <- append(append(append(data_ave1, data_ave2), data_ave3), data_ave4)  
+  data_sum_nor <- data_sum - data_sum[1] #normalizing by water well
   return(data_sum_nor) #output
 }
 
