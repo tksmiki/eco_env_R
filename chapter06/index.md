@@ -1,5 +1,5 @@
 #### 第6章
-##### データの準備
+##### 6.1 データの準備
 まずは第6章用のフォルダを作成し(たとえば、<b>chapter06</b>)、以下のファイルをダウンロードしよう<br>
 [metadata_ecopl.obj](../Robj/metadata_ecopl.obj)<br>
 [phyto_metadata.obj](../Robj/phyto_metadata.obj)<br>
