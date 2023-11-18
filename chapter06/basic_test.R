@@ -3,7 +3,7 @@ phyto_metadata <- readRDS("phyto_metadata.obj")
 species_ryuko_data <- readRDS("phyto_ryuko_data.obj")
 metadata_ecoplate <- readRDS("metadata_ecopl.obj")
 summary_ecoplate <- readRDS("summary_ecopl.obj")
-#from basic_graphics.R 種数について再度計算
+#from basic_graphics.R, calculating species richness
 species_richness <- apply(species_ryuko_data > 0, 1, sum)
 
 subset(species_richness, phyto_metadata$year == "2018")
@@ -183,5 +183,3 @@ data_s01 <- subset(data_s, dataset == "circle")[2:3]
 data_s02 <- subset(data_s, dataset == "dino")[2:3]
 cor(data_s01)
 cor(data_s02)
-plot(data_s01)
-plot(data_s02)
