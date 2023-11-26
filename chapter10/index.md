@@ -1,21 +1,20 @@
-#### 第10章
+#### 第11章
 
-##### ggplot2パッケージインストール時のエラーファイル一覧
-（エラーの解決に興味がある人向けの発展情報です）以下のテキストファイル一覧は、9回のインストール過程で出てきたメッセージです．クリックすればそのままブラウザ上で表示されるでしょう．<br>
+##### データの準備
+まずは第11章用のフォルダを作成し(たとえば、<b>chapter11</b>)、以下のファイルをダウンロードしよう<br>
+[phyto_metadata.obj](../Robj/phyto_metadata.obj)<br>
+[phyto_ryuko_data.obj](../Robj/phyto_ryuko_data.obj)<br>
+  
+##### 11.1 きれいなグラフを描く：ggplot2 の内容
+Rスクリプトをダウンロードして、RStudioで開いてください：<br>
+[ggplot2_graphics.R](./ggplot2_graphics.R)<br>
 
-[ggplot2_3.6.3_no1.txt](./ggplot2_3.6.3_no1.txt)<br>
-[ggplot2_3.6.3_no2.txt](./ggplot2_3.6.3_no2.txt)<br>
-[ggplot2_3.6.3_no3.txt](./ggplot2_3.6.3_no3.txt)<br>
-[ggplot2_3.6.3_no4.txt](./ggplot2_3.6.3_no4.txt)<br>
-[ggplot2_3.6.3_no5.txt](./ggplot2_3.6.3_no5.txt)<br>
-[ggplot2_3.6.3_no6.txt](./ggplot2_3.6.3_no6.txt)<br>
-[ggplot2_3.6.3_no7.txt](./ggplot2_3.6.3_no7.txt)<br>
-[ggplot2_3.6.3_no8.txt](./ggplot2_3.6.3_no8.txt)<br>
-[ggplot2_3.6.3_no9.txt](./ggplot2_3.6.3_no9.txt)<br>
+このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./ggplot2_graphics.nb.html" target="_blank" rel="noopener noreferrer">ggplot2_graphics.nb.html</a><br>
 
+##### 11.2 Rスクリプトの整理整頓と共有方法：R Notebook の内容
 
-##### (おまけ)Procrustes解析用のサンプルコード（図10.10）
-コメント等を入れていませんが、興味がある人はやってみてください（データが格納されたRオブジェクトファイルは他のフォルダからコピーすると良いでしょう）．<br>
-[forfig.10.10.R](./forfig.10.10.R)
+R Notebookファイルをダウンロードしよう．ただし，R Notebookを扱うのが初めてな場合は自分でゼロから書くのがよいでしょう<br>
+[basic_plot_note.Rmd](./basic_plot_note.Rmd)<br>
 
+このR Notebookファイルから生成したHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_plot_note.nb.html" target="_blank" rel="noopener noreferrer">basic_plot_note.nb.html</a><br>
 
