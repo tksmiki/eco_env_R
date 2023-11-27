@@ -20,7 +20,11 @@
 
 ##### 付録C RStudioをもっと活用しよう
 ###### C.2 他のコンピュータ言語との相乗り
+RとC/pythonとの速度比較<br>
+-- <a href="https://sites.google.com/view/python3-math-ecol/tdm/ode" target="_blank" rel="noopener noreferrer">Python3で数理生態</a><br>
+
 手法動画ポータルから<br>
-・Pythonとreticulate   https://youtu.be/3wVXXytxt5c　
-・C++とRcpp　https://youtu.be/OVZoM3wtCFA　
+-- <a href="https://youtu.be/3wVXXytxt5c" target="_blank" rel="noopener noreferrer">Pythonとreticulate</a><br>
+-- <a href="https://youtu.be/OVZoM3wtCFA" target="_blank" rel="noopener noreferrer">C++とRcpp</a><br>
+
 
