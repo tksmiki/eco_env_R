@@ -2,6 +2,10 @@
 ##### 2.1 PCの下準備
 Windows10以前およびMacをお使いのかたで細かい設定を知りたいかたは次のリンク先のファイルをダウンロードしてください．<br>
 <a href="https://drive.google.com/file/d/1nOORw9xrqwyuAQtncoVzO0CNdPtvT-rg/view" target="_blank" rel="noopener noreferrer">settingR_miki.pdf</a><br>
+
+##### 2.2 RとRStudioのインストール
+###### 2.2.1 Rのインストール
+CRANのサイト: <a href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">https://cran.r-project.org/</a><br>
 ##### 2.3 RStudioの基本操作と便利な設定
 Rスクリプトをダウンロードして、RStudioで開いてください：<br>
 [test_rscript.R](./test_rscript.R) <br>
