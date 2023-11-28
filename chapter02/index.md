@@ -6,6 +6,9 @@ Windows10以前およびMacをお使いのかたで細かい設定を知りた�
 ##### 2.2 RとRStudioのインストール
 ###### 2.2.1 Rのインストール
 CRANのサイト: <a href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">https://cran.r-project.org/</a><br>
+###### 2.2.2 RStudioのインストール
+RStudioのサイト: <a href="https://posit.co/" target="_blank" rel="noopener noreferrer">https://posit.co/</a><br>
+
 ##### 2.3 RStudioの基本操作と便利な設定
 Rスクリプトをダウンロードして、RStudioで開いてください：<br>
 [test_rscript.R](./test_rscript.R) <br>
