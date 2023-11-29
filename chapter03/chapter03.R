@@ -1,3 +1,7 @@
+a <- 1　　　　　　　
+b <- 2　　　　　　　
+c <- a + b
+
 #From Chapter03 3.1.2
 #simple generation of vectors
 test_v <- c(1.0, 2.0, 2.5)
