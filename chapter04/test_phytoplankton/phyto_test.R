@@ -10,6 +10,7 @@ for(i in 1:no_sample) {
   raw_data[[i]] <- read.csv(as.character(phyto_metadata$file[i]), header = T)
 }
 
+
 ###For Chapter 5: Section 5.1#######
 phyto_metadata <- read.csv("metadata_phyto_e1.csv", header = T) #load file list
 
