@@ -10,7 +10,7 @@ CRANのサイト: <a href="https://cran.r-project.org/" target="_blank" rel="noo
 RStudioのサイト: <a href="https://posit.co/" target="_blank" rel="noopener noreferrer">https://posit.co/</a><br>
 
 ##### 2.3 RStudioの基本操作と便利な設定
-Rスクリプトをダウンロードして、RStudioで開いてください：<br>
+Rスクリプトファイルをダウンロードして、RStudioで開いてください：<br>
 [test_rscript.R](./test_rscript.R) <br>
-このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
+このRスクリプトファイルの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./chapter02.nb.html" target="_blank" rel="noopener noreferrer">chapter02.nb.html</a><br>
