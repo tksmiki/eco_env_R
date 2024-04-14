@@ -45,7 +45,7 @@
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./test_phytoplankton/phyto_test.nb.html" target="_blank" rel="noopener noreferrer">phyto_test.nb.html</a><br>
 
-##### 4.3.2 自動読み込み例2: 細菌群集の炭素代謝データ（エコプレート）
+###### 4.3.2 自動読み込み例2: 細菌群集の炭素代謝データ（エコプレート）
 以下のサンプルスクリプトを<b>test_ecoplate</b>フォルダの中に保存しましょう。<b>chapter04_05</b>の直下や<b>test_phytoplankton</b>の下に保存してはいけません！<br>
 [ecoplate_test.R](./test_ecoplate/ecoplate_test.R)<br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
