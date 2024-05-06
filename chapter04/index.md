@@ -34,7 +34,7 @@
 [phyto_test.R](./test_phytoplankton/phyto_test.R)
 
 ##### <b>4.2 プログラミングの基礎(if, loop, 関数)</b>
-以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。本文中のサンプルコードの多くは以下のスクリプトには書き込まれていませんで、自分で書き込んでから実行してみましょう。<br>
+以下のサンプルスクリプトを<b>chapter04_05</b>フォルダの直下に保存しましょう。<b>本文中のサンプルコードの２２行目以降は以下のスクリプトには書き込まれていませんで、自分で書き込んでから実行してみましょう。</b><br>
 [chapter04_4-2.R](./chapter04_4-2.R) <br>
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br>
 <a href="./chapter04_4-2.nb.html" target="_blank" rel="noopener noreferrer">chapter04_4-2.nb.html</a><br>
