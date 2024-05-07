@@ -21,7 +21,7 @@ tapply(species_richness, phyto_metadata$year, var)
 
 t.test(species_richness ~ phyto_metadata$year, var.equal = F)
 
-total_abundance <- apply(species_ryuko_data,1,sum)
+total_abundance <- apply(species_ryuko_data, 1, sum)
 boxplot(
   total_abundance ~ phyto_metadata$year,
   outline = TRUE,
