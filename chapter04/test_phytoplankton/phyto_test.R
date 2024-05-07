@@ -22,7 +22,7 @@ for(i in 1:no_sample) {
   raw_data[[i]] <- read.csv(as.character(phyto_metadata$file[i]), header = T)
 }
 
-raw_data[[5]] <- raw_data[[5]][-37,-4]
+raw_data[[5]] <- raw_data[[5]][-37, -4]
 
 ######For Section 5.2.1############### 
 #change colnames
