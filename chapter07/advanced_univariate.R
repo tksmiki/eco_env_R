@@ -23,7 +23,7 @@ plot3d(
   xlab = "temperature", ylab = "abundance", zlab = "richness",
   type = "s",
   size = 3,
-  col = c(2,9)[as.factor(phyto_metadata$year)]
+  col = c(2, 9)[as.factor(phyto_metadata$year)]
 )
 
 model_temp <- lm(species_richness ~ phyto_metadata$temp)
@@ -38,7 +38,7 @@ plot3d(
   xlab = "temperature", ylab = "abundance", zlab = "richness",
   type = "s",
   size = 3,
-  col = c(2,9)[as.factor(phyto_metadata$year)]
+  col = c(2, 9)[as.factor(phyto_metadata$year)]
 )
 fit_model <- lm(species_richness ~ phyto_metadata$temp + total_abundance)
 plane_coeff <- coef(fit_model)
@@ -60,7 +60,7 @@ boxplot(
 stripchart(
   len ~ dose + supp, data = sub_TG,
   method = "stack",
-  pch = c(1,1,2,2),
+  pch = c(1, 1, 2, 2),
   cex = 3,
   vertical = TRUE,
   add = TRUE
