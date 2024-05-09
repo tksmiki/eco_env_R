@@ -259,7 +259,7 @@ PCoA2_ryuko_J <- PCoA_ryuko_J$sites[, 2]
 plot(
   PCoA2_ryuko_J ~ PCoA1_ryuko_J,
   cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
-  xlab = "PCoA1 (19.7 %)", ylab = "PCoA2 (12.3 %) ",
+  xlab = "PCoA1 (19.7 %)", ylab = "PCoA2 (12.3 %)",
   asp = 1,
   main = "With Jaccard"
 )
@@ -306,8 +306,8 @@ PCoA1_ecoplate_J <- PCoA_ecoplate_J$sites[,1]
 PCoA2_ecoplate_J<- PCoA_ecoplate_J$sites[,2]
 plot(
   PCoA2_ecoplate_J ~ PCoA1_ecoplate_J ,
-  cex = 3, pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
-  xlab = "PCoA1 (51.9 %)", ylab = "PCoA2 (30.2 %) ",
+  cex = 3, pch = c(1, 5)[as.factor(metadata_ecoplate$treatment)],
+  xlab = "PCoA1 (51.9 %)", ylab = "PCoA2 (30.2 %)",
   asp = 1,
   main = "With Jaccard"
 )
