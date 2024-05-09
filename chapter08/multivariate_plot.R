@@ -321,7 +321,7 @@ biplot(prcomp(comm, scale. = F))
 ordiplot(capscale(comm ~ 1, distance = "euclidean"), type = "text")
 ordiplot(capscale(scale(comm) ~ 1, distance = "euclidean"), type = "text")
 ordiplot(prcomp(comm, scale. = T), type = "text")
-ordiplot(prcomp(comm, scale. = F), type="text")
+ordiplot(prcomp(comm, scale. = F), type = "text")
 ordiplot(prcomp(scale(comm), scale. = F), type = "text")
 
 ###Non-hierarchical clustering####
