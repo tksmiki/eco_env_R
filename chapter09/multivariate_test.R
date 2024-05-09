@@ -22,7 +22,7 @@ PCoA2_ecoplate_BC <- PCoA_ecoplate_BC$sites[,2]
 plot(
   PCoA2_ecoplate_BC ~ PCoA1_ecoplate_BC,
   cex = 3, pch = as.numeric(as.factor(metadata_ecoplate$treatment)),
-  xlab = "PCoA1 (24.6 %)", ylab = "PCoA2 (12.4 %) ",
+  xlab = "PCoA1 (24.6 %)", ylab = "PCoA2 (12.4 %)",
   asp = 1,
   main = "Ecoplate With Bray-Curtis"
 )
@@ -34,13 +34,13 @@ ecoplate_BC_F
 ####Example of permutation####
 set.seed(1235) #fix the random seed
 leng <- length(metadata_ecoplate$treatment)
-for(i in 1: 3) {
+for(i in 1:3) {
   perm_treatment <- sample(metadata_ecoplate$treatment, leng, replace = FALSE) #shuffling the index
   F_perm <- round(adonis(ecoplate_BC.d ~ perm_treatment)$aov.tab$F.Model[1],4)
   plot(
    PCoA2_ecoplate_BC ~ PCoA1_ecoplate_BC,
    cex = 3, pch = as.numeric(as.factor(perm_treatment)),
-   xlab = "PCoA1 (24.6 %)", ylab = "PCoA2 (12.4 %) ",
+   xlab = "PCoA1 (24.6 %)", ylab = "PCoA2 (12.4 %)",
    asp = 1,
    main = paste("Permutation trial-", i, ": F value = ", F_perm, sep="")
   )
@@ -49,7 +49,7 @@ for(i in 1: 3) {
 test_for_Fperm <- adonis(ecoplate_BC.d ~ metadata_ecoplate$treatment, perm = 999)
 hist(test_for_Fperm$f.perms, main = "Frequency of permutational F-values")
 sum(test_for_Fperm$f.perms >= ecoplate_BC_F) # fraction with which permutational F is equal or greater than the observed F value. 
-(sum(test_for_Fperm$f.perms >= ecoplate_BC_F) + 1)/(999 + 1)
+(sum(test_for_Fperm$f.perms >= ecoplate_BC_F) + 1) / (999 + 1)
 
 ####PERMANOVA for ecoplate data####
 ecoplate_BC.d <- vegdist(summary_ecoplate, method = "bray") #Bray-Curtis
@@ -68,7 +68,7 @@ boxplot(
 stripchart(
   ecoplate_BC_var$distances ~ metadata_ecoplate$treatment,
   method = "stack",
-  pch = c(1,2),
+  pch = c(1, 2),
   cex = 3,
   vertical = TRUE,
   add = TRUE
