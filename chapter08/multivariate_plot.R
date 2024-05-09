@@ -24,8 +24,8 @@ plot(
 )
 model01 <- lm(s05 ~ s04, data = summary_ecoplate)
 abline(model01, lty = 5)
-model02 <- summary(capscale(summary_ecoplate[,4:5] ~ 1, distance = "euclidean"))
-slope_PC1 <- model02$species[2,1]/model02$species[1,1]
+model02 <- summary(capscale(summary_ecoplate[, 4:5] ~ 1, distance = "euclidean"))
+slope_PC1 <- model02$species[2, 1]/model02$species[1, 1]
 intercept_PC1 <- mean(summary_ecoplate$s05) - slope_PC1*mean(summary_ecoplate$s04)
 abline(intercept_PC1, slope_PC1)
 par(new = T)
@@ -39,12 +39,12 @@ plot(
   asp = 1.0
 )
 
-y_dummy <- rep(0, length(summary_ecoplate[,1]))
+y_dummy <- rep(0, length(summary_ecoplate[, 1]))
 plot(
   y_dummy ~ model02$sites[, 1],
-  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  pch = c(1, 5)[as.factor(metadata_ecoplate$treatment)],
   cex = 3,
-  xlim = c(-2,2), ylim = c(-0.5,0.5),
+  xlim = c(-2, 2), ylim = c(-0.5, 0.5),
   xlab = "New axis",
   ylab = ""
 )
@@ -53,7 +53,7 @@ plot(
   0.0, 0.0,
   cex = 3,
   pch = 3,
-  xlim = c(-2,2), ylim = c(-0.5,0.5),
+  xlim = c(-2, 2), ylim = c(-0.5, 0.5),
   xlab = "", ylab = ""
 )
 
@@ -64,45 +64,45 @@ plot3d(
   xlab = substrate_name[4], ylab = substrate_name[5], zlab = substrate_name[6],
   type = "s",
   size = 3,
-  col = c(2,9)[as.factor(metadata_ecoplate$treatment)]
+  col = c(2, 9)[as.factor(metadata_ecoplate$treatment)]
 )
 model03 <- summary(capscale(summary_ecoplate[,4:6] ~ 1, distance = "euclidean"))
 #PC1-PC2 plane can be defined by the orthogonal vector (i.e, PC3)
-PC1_coeff <- model03$species[1:3,1]
-PC2_coeff <- model03$species[1:3,2]
-PC3_coeff <- model03$species[1:3,3]
+PC1_coeff <- model03$species[1:3, 1]
+PC2_coeff <- model03$species[1:3, 2]
+PC3_coeff <- model03$species[1:3, 3]
 new_origin <- c(mean(summary_ecoplate$s04), mean(summary_ecoplate$s05), mean(summary_ecoplate$s06))
-intercept_coeff <- (PC3_coeff %*% new_origin)*-1.0
+intercept_coeff <- (PC3_coeff %*% new_origin) * -1.0
 planes3d(PC3_coeff[1], PC3_coeff[2], PC3_coeff[3], intercept_coeff, col = "blue", alpha = 0.5)
 arrow3d(
   p0 = new_origin,
-  p1 = new_origin + PC1_coeff*0.4,
-  s = 1/4,
+  p1 = new_origin + PC1_coeff * 0.4,
+  s = 1 / 4,
   type = "rotation"
 )
 arrow3d(
   p0 = new_origin,
-  p1 = new_origin + PC2_coeff*0.4,
-  s = 1/4,
+  p1 = new_origin + PC2_coeff * 0.4,
+  s = 1 / 4,
   type = "rotation"
 )
 ####Reduction to 2D####
 plot(
   model03$sites[, 2] ~ model03$sites[, 1],
-  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  pch = c(1, 5)[as.factor(metadata_ecoplate$treatment)],
   cex = 3,
-  xlim = c(-3,3), ylim = c(-3,3),
+  xlim = c(-3, 3), ylim = c(-3, 3),
   xlab = "New axis 1",
   ylab = "New axis 2",
   asp = 1.0
 )
 ####Reduction to 1D####
-y_dummy <- rep(0, length(summary_ecoplate[,1]))
+y_dummy <- rep(0, length(summary_ecoplate[, 1]))
 plot(
   y_dummy ~ model03$sites[, 1],
-  pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
+  pch = c(1, 5)[as.factor(metadata_ecoplate$treatment)],
   cex = 3,
-  xlim = c(-3,3), ylim = c(-0.5,0.5),
+  xlim = c(-3, 3), ylim = c(-0.5, 0.5),
   xlab = "New axis 1",
   ylab = ""
 )
@@ -115,29 +115,29 @@ plot3d(
   size = 3,
   col = c(2,9)[as.factor(metadata_ecoplate$treatment)]
 )
-model03 <- summary(capscale(summary_ecoplate[,4:6] ~ 1, distance = "euclidean"))
-PC1_coeff <- model03$species[1:3,1]
-PC2_coeff <- model03$species[1:3,2]
-PC3_coeff <- model03$species[1:3,3]
+model03 <- summary(capscale(summary_ecoplate[, 4:6] ~ 1, distance = "euclidean"))
+PC1_coeff <- model03$species[1:3, 1]
+PC2_coeff <- model03$species[1:3, 2]
+PC3_coeff <- model03$species[1:3, 3]
 new_origin <- c(mean(summary_ecoplate$s04), mean(summary_ecoplate$s05), mean(summary_ecoplate$s06))
-intercept_coeff <- (PC3_coeff %*% new_origin)*-1.0
+intercept_coeff <- (PC3_coeff %*% new_origin) * -1.0
 planes3d(PC3_coeff[1], PC3_coeff[2], PC3_coeff[3], intercept_coeff, col = "blue", alpha = 0.5)
 arrow3d(
   p0 = new_origin,
-  p1 = new_origin + PC1_coeff*0.4,
-  s = 1/4,
+  p1 = new_origin + PC1_coeff * 0.4,
+  s = 1 / 4,
   type = "rotation"
 )
 arrow3d(
   p0 = new_origin,
-  p1 = new_origin + PC2_coeff*0.4,
-  s = 1/4,
+  p1 = new_origin + PC2_coeff * 0.4,
+  s = 1 / 4,
   type = "rotation"
 )
 arrow3d(
   p0 = new_origin,
-  p1 = new_origin + PC3_coeff*0.4,
-  s = 1/4,
+  p1 = new_origin + PC3_coeff * 0.4,
+  s = 1 / 4,
   type = "rotation"
 )
 
@@ -146,12 +146,12 @@ PCA_model01 <- summary(capscale(summary_ecoplate ~ 1, distance = "euclidean"))
 PCA_model01
 PCA_model01$sites
 
-PC1_01 <- PCA_model01$sites[,1]
-PC2_01 <- PCA_model01$sites[,2]
+PC1_01 <- PCA_model01$sites[, 1]
+PC2_01 <- PCA_model01$sites[, 2]
 plot(
   PC2_01 ~ PC1_01,
-  cex = 3, pch = c(1,5)[as.factor(metadata_ecoplate$treatment)],
-  xlab = "PC1 (21.1 %)", ylab = "PC2 (13.8 %) "
+  cex = 3, pch = c(1, 5)[as.factor(metadata_ecoplate$treatment)],
+  xlab = "PC1 (21.1 %)", ylab = "PC2 (13.8 %)"
 )
 
 ####PCA for phytoplankton####
@@ -159,12 +159,12 @@ PCA_model02 <- summary(capscale(species_ryuko_data ~ 1, distance = "euclidean"))
 PCA_model02
 PCA_model02$sites
 
-PC1_02 <- PCA_model02$sites[,1]
-PC2_02 <- PCA_model02$sites[,2]
+PC1_02 <- PCA_model02$sites[, 1]
+PC2_02 <- PCA_model02$sites[, 2]
 plot(
   PC2_02 ~ PC1_02,
   cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
-  xlab = "PC1 (62.0%)", ylab = "PC2 (28.3 %) "
+  xlab = "PC1 (62.0%)", ylab = "PC2 (28.3 %)"
 )
 
 ####PCA for airquality data####
@@ -172,42 +172,42 @@ data("airquality")
 summary(airquality)
 air_data <- na.omit(airquality)
 
-PCA_model03 <- summary(capscale(air_data[,1:4] ~ 1, distance = "euclidean"))
+PCA_model03 <- summary(capscale(air_data[, 1:4] ~ 1, distance = "euclidean"))
 PCA_model03
 
-PC1_03 <- PCA_model03$sites[,1]
-PC2_03 <- PCA_model03$sites[,2]
+PC1_03 <- PCA_model03$sites[, 1]
+PC2_03 <- PCA_model03$sites[, 2]
 plot(
   PC2_03 ~ PC1_03,
   cex = 0.5, pch = air_data$Month,
-  xlab = "PC1 (89.0 %)", ylab = "PC2 (10.5 %) ",
+  xlab = "PC1 (89.0 %)", ylab = "PC2 (10.5 %)",
   asp = 1
 )
 text(PC1_03 + 0.5, PC2_03, labels = rownames(air_data), cex = 0.8)
 
 air_data2 <- scale(air_data)
-summary(air_data2[,1:4])
+summary(air_data2[, 1:4])
 
-PCA_model04 <- summary(capscale(air_data2[,1:4] ~ 1, distance = "euclidean"))
+PCA_model04 <- summary(capscale(air_data2[, 1:4] ~ 1, distance = "euclidean"))
 PCA_model04
 
-PC1_04 <- PCA_model04$sites[,1]
-PC2_04 <- PCA_model04$sites[,2]
+PC1_04 <- PCA_model04$sites[, 1]
+PC2_04 <- PCA_model04$sites[, 2]
 plot(
   PC2_04 ~ PC1_04,
   cex = 0.5, pch = air_data$Month,
-  xlab = "PC1 (59.0 %)", ylab = "PC2 (22.4 %) ",  
+  xlab = "PC1 (59.0 %)", ylab = "PC2 (22.4 %)",  
   asp = 1
 )
-text(PC1_04+0.05, PC2_04, labels = rownames(air_data), cex = 0.8)
+text(PC1_04 + 0.05, PC2_04, labels = rownames(air_data), cex = 0.8)
 
 #Large variations between variables with the same unit
 summary(species_ryuko_data$`Fragilaria crotonensis`)
 summary(species_ryuko_data$`Micrasterias hardyi`)
 
 ####Standard way of PCA####
-PCA_s01 <- prcomp(air_data[,1:4], scale. = F)
-PCA_s02 <- prcomp(air_data[,1:4], scale. = T)
+PCA_s01 <- prcomp(air_data[, 1:4], scale. = F)
+PCA_s02 <- prcomp(air_data[, 1:4], scale. = T)
 summary(PCA_s01)
 biplot(PCA_s01)
 biplot(PCA_s02)
@@ -223,7 +223,7 @@ rownames(comm) <- c("A", "B", "C", "D")
 plot(
   sp.2 ~ sp.1, data = comm,
   cex = 3.0,
-  xlim = c(0,7), ylim = c(0,7),
+  xlim = c(0, 7), ylim = c(0, 7),
   asp = 1.0
 )
 text(comm$sp.1, comm$sp.2, labels = rownames(comm), cex = 0.8)
@@ -236,12 +236,12 @@ vegdist(comm, method = "bray") #Bray-Curtis
 ####PCoA for comm####
 PCoA_comm_BC <- summary(capscale(comm ~ 1, distance = "bray"))
 PCoA_comm_BC
-PCoA1_comm_BC <- PCoA_comm_BC$sites[,1]
-PCoA2_comm_BC <- PCoA_comm_BC$sites[,2]
+PCoA1_comm_BC <- PCoA_comm_BC$sites[, 1]
+PCoA2_comm_BC <- PCoA_comm_BC$sites[, 2]
 plot(
   PCoA2_comm_BC ~ PCoA1_comm_BC,
   cex = 3,
-  xlab = "PCoA1 (54.5 %)", ylab = "PCoA2 (41.8 %) ",
+  xlab = "PCoA1 (54.5 %)", ylab = "PCoA2 (41.8 %)",
   asp = 1
 )
 text(PCoA1_comm_BC, PCoA2_comm_BC, labels = rownames(comm), cex = 0.8)
@@ -254,8 +254,8 @@ species_ryuko_data_b[species_ryuko_data_b > 0] <- 1 #binalization
 PCoA_ryuko_J <- summary(capscale(species_ryuko_data_b ~ 1, distance = "jaccard"))
 PCoA_ryuko_J
 
-PCoA1_ryuko_J <- PCoA_ryuko_J$sites[,1]
-PCoA2_ryuko_J <- PCoA_ryuko_J$sites[,2]
+PCoA1_ryuko_J <- PCoA_ryuko_J$sites[, 1]
+PCoA2_ryuko_J <- PCoA_ryuko_J$sites[, 2]
 plot(
   PCoA2_ryuko_J ~ PCoA1_ryuko_J,
   cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
@@ -268,12 +268,12 @@ plot(
 PCoA_ryuko_BC <- summary(capscale(species_ryuko_data ~ 1, distance = "bray"))
 PCoA_ryuko_BC
 
-PCoA1_ryuko_BC <- PCoA_ryuko_BC$sites[,1]
-PCoA2_ryuko_BC <- PCoA_ryuko_BC$sites[,2]
+PCoA1_ryuko_BC <- PCoA_ryuko_BC$sites[, 1]
+PCoA2_ryuko_BC <- PCoA_ryuko_BC$sites[, 2]
 plot(
   PCoA2_ryuko_BC ~ PCoA1_ryuko_BC,
   cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
-  xlab = "PCoA1 (25.4 %)", ylab = "PCoA2 (14.7 %) ",
+  xlab = "PCoA1 (25.4 %)", ylab = "PCoA2 (14.7 %)",
   asp = 1,
   main = "With Bray-Curtis"
 )
@@ -283,12 +283,12 @@ species_ryuko_data_H <- decostand(species_ryuko_data, method = "hellinger")
 PCoA_ryuko_H <- summary(capscale(species_ryuko_data_H ~ 1, distance = "euclidean"))
 PCoA_ryuko_H
 
-PCoA1_ryuko_H <- PCoA_ryuko_H$sites[,1]
-PCoA2_ryuko_H <- PCoA_ryuko_H$sites[,2]
+PCoA1_ryuko_H <- PCoA_ryuko_H$sites[, 1]
+PCoA2_ryuko_H <- PCoA_ryuko_H$sites[, 2]
 plot(
   PCoA2_ryuko_H ~ PCoA1_ryuko_H,
   cex = 3, pch = as.numeric(as.factor(phyto_metadata$month)),
-  xlab = "PCoA1 (22.4 %)", ylab = "PCoA2 (14. %) ",
+  xlab = "PCoA1 (22.4 %)", ylab = "PCoA2 (14.9 %)",
   asp = 1,
   main = "With Hellinger"
 )
