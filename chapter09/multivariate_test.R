@@ -42,7 +42,7 @@ for(i in 1:3) {
    cex = 3, pch = as.numeric(as.factor(perm_treatment)),
    xlab = "PCoA1 (24.6 %)", ylab = "PCoA2 (12.4 %)",
    asp = 1,
-   main = paste("Permutation trial-", i, ": F value = ", F_perm, sep="")
+   main = paste("Permutation trial-", i, ": F value = ", F_perm, sep = "")
   )
 }
 ####1000 permutations
@@ -75,20 +75,20 @@ stripchart(
 )
 
 ####PERMDISP for phytoplankton####
-ryuko_BC.d <- vegdist(species_ryuko_data[c(1,2,13,14,15),], method = "bray") #Bray-Curtis
-ryuko_BC_var <- betadisper(ryuko_BC.d, phyto_metadata$month[c(1,2,13,14,15)])
+ryuko_BC.d <- vegdist(species_ryuko_data[c(1, 2, 13, 14, 15),], method = "bray") #Bray-Curtis
+ryuko_BC_var <- betadisper(ryuko_BC.d, phyto_metadata$month[c(1, 2, 13, 14, 15)])
 permutest(ryuko_BC_var)
 #Visualization
 boxplot(
-  ryuko_BC_var$distances ~ phyto_metadata$month[c(1,2,13,14,15)],
+  ryuko_BC_var$distances ~ phyto_metadata$month[c(1, 2, 13, 14, 15)],
   outline = FALSE,
   col = "white",
   xlab = "Month", ylab = "distance to center"
 )
 stripchart(
-  ryuko_BC_var$distances ~ phyto_metadata$month[c(1,2,13,14,15)],
+  ryuko_BC_var$distances ~ phyto_metadata$month[c(1, 2, 13, 14, 15)],
   method = "stack",
-  pch = c(1,2),
+  pch = c(1, 2),
   cex = 3,
   vertical = TRUE,
   add = TRUE
