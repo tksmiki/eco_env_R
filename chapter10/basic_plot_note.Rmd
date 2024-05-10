@@ -28,6 +28,7 @@ plot(
 )
 abline(model01,col = 4)　#回帰直線
 ```
+
 # 線形回帰のggplot
 ```{r}
 
