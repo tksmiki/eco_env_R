@@ -1,7 +1,7 @@
 #### 第10章
 
 ##### <b>データの準備</b>
-まずは第10章用のフォルダを作成し(たとえば、<b>chapter10</b>)、以下のファイルをダウンロードしよう<br>
+まずは第10章用のフォルダを作成し(たとえば，<b>chapter10</b>)，以下のファイルをダウンロードしよう<br>
 [phyto_metadata.obj](../Robj/phyto_metadata.obj)<br>
 [phyto_ryuko_data.obj](../Robj/phyto_ryuko_data.obj)<br>
 
