@@ -1,0 +1,11 @@
+> install.packages("ellipsis")
+Installing package into ‘C:/Users/biomiki/Documents/R/win-library/3.6’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/ellipsis_0.3.2.zip'
+Content type 'application/zip' length 49192 bytes (48 KB)
+downloaded 48 KB
+
+package ‘ellipsis’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\biomiki\AppData\Local\Temp\RtmpAFxn42\downloaded_packages

@@ -1,0 +1,74 @@
+> install.packages("pillar")
+Installing package into ‘C:/Users/biomiki/Documents/R/win-library/3.6’
+(as ‘lib’ is unspecified)
+
+  There is a binary version available but the source version is later:
+       binary source needs_compilation
+pillar  1.6.0  1.8.1             FALSE
+
+installing the source package ‘pillar’
+
+trying URL 'https://cran.rstudio.com/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 479977 bytes (468 KB)
+downloaded 468 KB
+
+* installing *source* package 'pillar' ...
+**  パッケージ 'pillar' の解凍および MD5 サムの検証に成功しました 
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'pillar'
+    finding HTML links ...  完了 
+    align                                   html  
+    char                                    html  
+Rd warning: C:/Users/biomiki/AppData/Local/Temp/RtmpGUiMtk/R.INSTALL2664629756ba/pillar/man/char.Rd:23: file link 'char' in package 'tibble' does not exist and so has been treated as a topic
+    colonnade                               html  
+    ctl_new_pillar                          html  
+    ctl_new_pillar_list                     html  
+    deprecated                              html  
+    dim_desc                                html  
+    extra_cols                              html  
+    format_glimpse                          html  
+    format_tbl                              html  
+    format_type_sum                         html  
+    get_extent                              html  
+    glimpse                                 html  
+    new_ornament                            html  
+    new_pillar                              html  
+    new_pillar_component                    html  
+    new_pillar_shaft                        html  
+    new_pillar_title                        html  
+    new_pillar_type                         html  
+    new_tbl_format_setup                    html  
+    num                                     html  
+Rd warning: C:/Users/biomiki/AppData/Local/Temp/RtmpGUiMtk/R.INSTALL2664629756ba/pillar/man/num.Rd:33: file link 'num' in package 'tibble' does not exist and so has been treated as a topic
+    pillar-package                          html  
+    pillar                                  html  
+    pillar_options                          html  
+    pillar_shaft                            html  
+    scale_x_num                             html  
+    squeeze                                 html  
+    style_subtle                            html  
+    tbl_format_body                         html  
+    tbl_format_footer                       html  
+    tbl_format_header                       html  
+    tbl_format_setup                        html  
+    tbl_sum                                 html  
+    type_sum                                html  
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
+* DONE (pillar)
+
+The downloaded source packages are in
+	‘C:\Users\biomiki\AppData\Local\Temp\RtmpAFxn42\downloaded_packages’
