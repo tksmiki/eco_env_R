@@ -4,4 +4,7 @@
 
 ![図1.2](./chapter01_no1.png)
 
+![図1.3](./chapter01_no2.png)
+
+
 
