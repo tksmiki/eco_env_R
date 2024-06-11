@@ -3,7 +3,7 @@
 各章で使うデータとサンプルRスクリプトファイルは上のバーから各章へのリンクをクリックしてください。<br>
 <br><br><br><br>
 
-
+![cover](./05343.jpg)
 
 
 ![cover](./05343.jpg)(https://www.kyoritsu-pub.co.jp/book/b10080755.html){:target="_blank"}
