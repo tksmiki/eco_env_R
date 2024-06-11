@@ -4,7 +4,7 @@
 <br><br><br><br>
 
 
-[![cover](./05843.jpg)](https://www.kyoritsu-pub.co.jp/book/b10080755.html target="_blank")
+[![cover](./05843.jpg)](https://www.kyoritsu-pub.co.jp/book/b10080755.html)
 
 <br><br>
 このウェブページは<a href="https://bootswatch.com/cosmo/" target="_blank" rel="noopener noreferrer">cosmo css</a>を使用しています.
