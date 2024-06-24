@@ -13,7 +13,7 @@ Rスクリプトをダウンロードして、RStudioで開いてください：
 このRスクリプトの日本語解説込みのHTMLファイルは、次のリンクをクリックすればそのままウェブブラウザの新規タブで表示されます（Edgeを推奨、Safariも可）：<br><a href="./basic_graphics.nb.html" target="_blank" rel="noopener noreferrer">basic_graphics.nb.html</a><br>
 
 ##### <b>6.3 基本の検定１ 6.4 基本の検定２　6.5 回帰と相関　 </b>
-書籍中，6.4.2の最終段落，分散分析表の説明には致命的ミスがあります．<a href="../miscellaneous/"target="_blank" rel="noopener noreferrer">その他追記事項</a>をご覧ください．
+<b>書籍中，6.4.2の最終段落，分散分析表の説明には致命的ミスがあります．<a href="../miscellaneous/" target="_blank" rel="noopener noreferrer">その他追記事項</a>をご覧ください．</b>
 
 Rスクリプトをダウンロードして、RStudioで開いてください：<br>
 [basic_test.R](./basic_test.R)<br>
