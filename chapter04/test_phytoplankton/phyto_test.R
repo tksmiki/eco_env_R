@@ -1,5 +1,6 @@
 ###For Chapter 4: Sections 4.1 & 4.3 
 phyto_metadata <- read.csv("metadata_phyto.csv", header = T) #load file list
+
 levels(as.factor(phyto_metadata$YYMMDD))
 
 ####load each data###############
@@ -9,7 +10,6 @@ for(i in 1:no_sample) {
   print(i)
   raw_data[[i]] <- read.csv(as.character(phyto_metadata$file[i]), header = T)
 }
-
 
 ###For Chapter 5: Section 5.1#######
 phyto_metadata <- read.csv("metadata_phyto_e1.csv", header = T) #load file list
