@@ -1,4 +1,4 @@
-#### 第11章
+#### 第11章　独学の世界へようこそ
 ##### <b>11.1 独学の秘訣：ネットの海から役に立つ情報を見つけよう</b>
 -- <a href="https://www.google.co.jp/" target="_blank" rel="noopener noreferrer">google検索</a><br>
 -- <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube検索</a><br>
