@@ -1,4 +1,4 @@
-#### 第2章　R環境の準備
+#### 第2章 R環境の準備
 ##### <b>2.1 PCの下準備</b>
 Windows10以前およびMacをお使いのかたで細かい設定を知りたいかたは次のリンク先のファイルをダウンロードしてください．<br>
 <a href="https://drive.google.com/file/d/1nOORw9xrqwyuAQtncoVzO0CNdPtvT-rg/view" target="_blank" rel="noopener noreferrer">settingR_miki.pdf</a><br>
