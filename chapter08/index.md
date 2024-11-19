@@ -1,4 +1,4 @@
-#### 第8章
+#### 第8章　多変量解析の基盤
 ##### <b>データの準備</b>
 まずは第8章用のフォルダを作成し(たとえば、<b>chapter08</b>)、以下のファイルをダウンロードしよう<br>
 [metadata_ecopl.obj](../Robj/metadata_ecopl.obj)<br>
