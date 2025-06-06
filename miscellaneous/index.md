@@ -62,5 +62,24 @@ $マーク以降の列名Micrasterias hardyiが見慣れない記号「``` `` ``
   scores(model_test, display = "species")
 </div>
 
+##### <b>・RNotebookの挙動がおかしくなる場合の対処法</b> (2025.06.06)
+RNotebookは、RMarkdownというより上位のフォーマットの一形式となっているため、RStudio上のアイコンを不用意に押してしまうと、ヘッダ部分が自動で書き変わってしまって、RNotebookとしての挙動を示さなくなることがあります。その場合の対処法としては、以下のような感じで書き変わってしまったヘッダ部分の"output"をノートブック形式を指定するものに書き直すことが必要です。
 
+（RNotebook形式ではなくなってしまったもの）
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+---<br>
+title: "アブラムシに関する解析"<br>
+output:<br>
+  html_notebook: default<br>
+  pdf_document: default<br>
+---<br>
+</div>
+
+（RNotebook形式に戻す）
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+---<br>
+title: "アブラムシに関する解析"<br>
+output: html_notebook<br>
+---<br>
+</div>
 
