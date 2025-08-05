@@ -83,3 +83,9 @@ output: html_notebook<br>
 ---<br>
 </div>
 
+##### <b>・誤字いろいろ</b> (2025.08.05)
+・P96　コード中36行目：（誤）phytometadata$file -->  （正）phyto_metadata$file　<br><br>
+・P196　下から2行目：（誤）vegedist()関数　--> （正）vegdist()関数 <br><br>
+・P215　下から3行目：（誤）残差ベクトルをｙRj, yRjとする　--> (正)　2つ目のyRjにダッシュを付ける(yRj') <br><br>
+
+
