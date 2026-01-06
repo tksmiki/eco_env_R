@@ -57,13 +57,21 @@ $マーク以降の列名Micrasterias hardyiが見慣れない記号「``` `` ``
 ##### <b>・脚注の誤字</b> (2025.02.20)　→初版２刷では訂正済み
 174ページの脚注6) 「回帰平面（図7.4）」は、正しくは「回帰平面（図7.5）」です．
 
-##### <b>・主成分分析・主座標分析におけるspecies scoreの表示について</b> (2025.03.10)
+##### <b>・主成分分析・主座標分析におけるspecies scoreと寄与率の表示について</b> (2025.03.10, 2026.01.06)
 群集生態学用パッケージvegan()の更新によって関数capscale()を使って主成分分析（distance = "euclidean"を使う場合, P177）や主座標分析（たとえば、distance = "bray"を使う場合, P192）を実行する場合、テキストのコードのままではspecies scoreの一覧表が表示されません。次のようなコードを書く必要があります。
 
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
   model_test <- capscale(モデル式, distance = "特定の距離")<br>
   scores(model_test, display = "species")
 </div>
+
+あるいは、寄与率等を見たい場合はsummary()関数を使い、scoresを全部見たい場合はscores()を使うとよいでしょう。
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+  model_test <- capscale(モデル式, distance = "特定の距離")<br>
+  summary(model_test)
+  scores(model_test)
+</div>
+
 
 ##### <b>・RNotebookの挙動がおかしくなる場合の対処法</b> (2025.06.06)
 RNotebookは、RMarkdownというより上位のフォーマットの一形式となっているため、RStudio上のアイコンを不用意に押してしまうと、ヘッダ部分が自動で書き変わってしまって、RNotebookとしての挙動を示さなくなることがあります。その場合の対処法としては、以下のような感じで書き変わってしまったヘッダ部分の"output"をノートブック形式を指定するものに書き直すことが必要です。
