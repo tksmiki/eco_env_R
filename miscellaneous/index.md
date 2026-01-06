@@ -68,8 +68,8 @@ $マーク以降の列名Micrasterias hardyiが見慣れない記号「``` `` ``
 あるいは、寄与率等を見たい場合はsummary()関数を使い、scoresを全部見たい場合はscores()を使うとよいでしょう。
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
   model_test <- capscale(モデル式, distance = "特定の距離")<br>
-  summary(model_test)
-  scores(model_test)
+  summary(model_test)<br>
+  scores(model_test)<br>
 </div>
 
 
