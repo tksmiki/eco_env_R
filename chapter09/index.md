@@ -6,6 +6,9 @@
 [phyto_ryuko_data.obj](../Robj/phyto_ryuko_data.obj)<br>
 [summary_ecopl.obj](../Robj/summary_ecopl.obj)<br>
 
+##### <b>注意事項</b>
+以下のRスクリプトファイル（およびHTMLファイル）上のコードでは主座標分析の一部のコードがveganパッケージのアップデートにより動きません。
+<a href="(https://tksmiki.github.io/eco_env_R/miscellaneous/)" target="_blank" rel="noopener noreferrer">訂正と補足</a>の中頃の<b>「・主成分分析・主座標分析におけるspecies scoreと寄与率の表示について」</b>の解説をご確認ください。
 
 ##### <b>サンプルRスクリプト</b>
 <b>chapter09</b>の直下にサンプルRスクリプトをダウンロードしよう<br>
