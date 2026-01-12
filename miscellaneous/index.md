@@ -72,6 +72,11 @@ $マーク以降の列名Micrasterias hardyiが見慣れない記号「``` `` ``
   scores(model_test)<br>
 </div>
 
+また、scores()関数について、choicesという引数を指定すると、指定した次元まで結果を出力してくれます。指定しないと二軸分しか出力してくれません。
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+  model_test <- capscale(モデル式, distance = "特定の距離")<br>
+  scores(model_test, display = "sites", choices = 1:3)
+</div>
 
 ##### <b>・RNotebookの挙動がおかしくなる場合の対処法</b> (2025.06.06)
 RNotebookは、RMarkdownというより上位のフォーマットの一形式となっているため、RStudio上のアイコンを不用意に押してしまうと、ヘッダ部分が自動で書き変わってしまって、RNotebookとしての挙動を示さなくなることがあります。その場合の対処法としては、以下のような感じで書き変わってしまったヘッダ部分の"output"をノートブック形式を指定するものに書き直すことが必要です。
